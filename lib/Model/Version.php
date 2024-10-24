@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PostPuma\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PostPuma\ObjectSerializer;
 
 /**
  * Version Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,8 +60,8 @@ class Version implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'account_id' => 'int',
         'is_original' => 'bool',
-        'content' => '\OpenAPI\Client\Model\VersionContent',
-        'options' => '\OpenAPI\Client\Model\VersionOptions'
+        'content' => '\PostPuma\Model\VersionContent',
+        'options' => '\PostPuma\Model\VersionOptions'
     ];
 
     /**
@@ -377,7 +377,7 @@ class Version implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets content
      *
-     * @return \OpenAPI\Client\Model\VersionContent
+     * @return \PostPuma\Model\VersionContent
      */
     public function getContent()
     {
@@ -387,7 +387,7 @@ class Version implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets content
      *
-     * @param \OpenAPI\Client\Model\VersionContent $content content
+     * @param \PostPuma\Model\VersionContent $content content
      *
      * @return self
      */
@@ -404,7 +404,7 @@ class Version implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets options
      *
-     * @return \OpenAPI\Client\Model\VersionOptions|null
+     * @return \PostPuma\Model\VersionOptions|null
      */
     public function getOptions()
     {
@@ -414,7 +414,7 @@ class Version implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets options
      *
-     * @param \OpenAPI\Client\Model\VersionOptions|null $options options
+     * @param \PostPuma\Model\VersionOptions|null $options options
      *
      * @return self
      */

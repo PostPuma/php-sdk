@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PostPuma\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PostPuma\ObjectSerializer;
 
 /**
  * VersionOptions Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,13 +58,13 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'tiktok' => '\OpenAPI\Client\Model\VersionOptionsTiktok',
-        'youtube' => '\OpenAPI\Client\Model\VersionOptionsYoutube',
-        'linkedin' => '\OpenAPI\Client\Model\VersionOptionsLinkedin',
-        'mastodon' => '\OpenAPI\Client\Model\VersionOptionsMastodon',
-        'instagram' => '\OpenAPI\Client\Model\VersionOptionsInstagram',
-        'pinterest' => '\OpenAPI\Client\Model\VersionOptionsPinterest',
-        'facebook_page' => '\OpenAPI\Client\Model\VersionOptionsInstagram'
+        'tiktok' => '\PostPuma\Model\VersionOptionsTiktok',
+        'youtube' => '\PostPuma\Model\VersionOptionsYoutube',
+        'linkedin' => '\PostPuma\Model\VersionOptionsLinkedin',
+        'mastodon' => '\PostPuma\Model\VersionOptionsMastodon',
+        'instagram' => '\PostPuma\Model\VersionOptionsInstagram',
+        'pinterest' => '\PostPuma\Model\VersionOptionsPinterest',
+        'facebook_page' => '\PostPuma\Model\VersionOptionsInstagram'
     ];
 
     /**
@@ -335,7 +335,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tiktok
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsTiktok|null
+     * @return \PostPuma\Model\VersionOptionsTiktok|null
      */
     public function getTiktok()
     {
@@ -345,7 +345,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tiktok
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsTiktok|null $tiktok tiktok
+     * @param \PostPuma\Model\VersionOptionsTiktok|null $tiktok tiktok
      *
      * @return self
      */
@@ -362,7 +362,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets youtube
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsYoutube|null
+     * @return \PostPuma\Model\VersionOptionsYoutube|null
      */
     public function getYoutube()
     {
@@ -372,7 +372,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets youtube
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsYoutube|null $youtube youtube
+     * @param \PostPuma\Model\VersionOptionsYoutube|null $youtube youtube
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets linkedin
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsLinkedin|null
+     * @return \PostPuma\Model\VersionOptionsLinkedin|null
      */
     public function getLinkedin()
     {
@@ -399,7 +399,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets linkedin
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsLinkedin|null $linkedin linkedin
+     * @param \PostPuma\Model\VersionOptionsLinkedin|null $linkedin linkedin
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets mastodon
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsMastodon|null
+     * @return \PostPuma\Model\VersionOptionsMastodon|null
      */
     public function getMastodon()
     {
@@ -426,7 +426,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mastodon
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsMastodon|null $mastodon mastodon
+     * @param \PostPuma\Model\VersionOptionsMastodon|null $mastodon mastodon
      *
      * @return self
      */
@@ -443,7 +443,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets instagram
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsInstagram|null
+     * @return \PostPuma\Model\VersionOptionsInstagram|null
      */
     public function getInstagram()
     {
@@ -453,7 +453,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets instagram
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsInstagram|null $instagram instagram
+     * @param \PostPuma\Model\VersionOptionsInstagram|null $instagram instagram
      *
      * @return self
      */
@@ -470,7 +470,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets pinterest
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsPinterest|null
+     * @return \PostPuma\Model\VersionOptionsPinterest|null
      */
     public function getPinterest()
     {
@@ -480,7 +480,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pinterest
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsPinterest|null $pinterest pinterest
+     * @param \PostPuma\Model\VersionOptionsPinterest|null $pinterest pinterest
      *
      * @return self
      */
@@ -497,7 +497,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets facebook_page
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsInstagram|null
+     * @return \PostPuma\Model\VersionOptionsInstagram|null
      */
     public function getFacebookPage()
     {
@@ -507,7 +507,7 @@ class VersionOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets facebook_page
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsInstagram|null $facebook_page facebook_page
+     * @param \PostPuma\Model\VersionOptionsInstagram|null $facebook_page facebook_page
      *
      * @return self
      */

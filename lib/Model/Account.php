@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PostPuma\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PostPuma\ObjectSerializer;
 
 /**
  * Account Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,7 +63,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'username' => 'string',
         'provider' => 'string',
-        'data' => '\OpenAPI\Client\Model\AccountData',
+        'data' => '\PostPuma\Model\AccountData',
         'authorized' => 'bool',
         'created_at' => 'string'
     ];
@@ -477,7 +477,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets data
      *
-     * @return \OpenAPI\Client\Model\AccountData|null
+     * @return \PostPuma\Model\AccountData|null
      */
     public function getData()
     {
@@ -487,7 +487,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data
      *
-     * @param \OpenAPI\Client\Model\AccountData|null $data data
+     * @param \PostPuma\Model\AccountData|null $data data
      *
      * @return self
      */

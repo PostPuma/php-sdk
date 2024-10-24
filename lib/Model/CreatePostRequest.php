@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PostPuma\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PostPuma\ObjectSerializer;
 
 /**
  * CreatePostRequest Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -66,7 +66,7 @@ class CreatePostRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
         'queue' => 'bool',
         'accounts' => 'int[]',
         'tags' => 'int[]',
-        'versions' => '\OpenAPI\Client\Model\Version[]'
+        'versions' => '\PostPuma\Model\Version[]'
     ];
 
     /**
@@ -565,7 +565,7 @@ class CreatePostRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets versions
      *
-     * @return \OpenAPI\Client\Model\Version[]|null
+     * @return \PostPuma\Model\Version[]|null
      */
     public function getVersions()
     {
@@ -575,7 +575,7 @@ class CreatePostRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets versions
      *
-     * @param \OpenAPI\Client\Model\Version[]|null $versions versions
+     * @param \PostPuma\Model\Version[]|null $versions versions
      *
      * @return self
      */

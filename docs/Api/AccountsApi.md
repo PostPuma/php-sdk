@@ -1,4 +1,4 @@
-# OpenAPI\Client\AccountsApi
+# PostPuma\AccountsApi
 
 All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313ie, except if the operation defines another base path.
 
@@ -11,7 +11,7 @@ All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313i
 ## `getAccount()`
 
 ```php
-getAccount($account_uuid): \OpenAPI\Client\Model\Account
+getAccount($account_uuid): \PostPuma\Model\Account
 ```
 
 Get account
@@ -26,10 +26,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\AccountsApi(
+$apiInstance = new PostPuma\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -53,7 +53,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Account**](../Model/Account.md)
+[**\PostPuma\Model\Account**](../Model/Account.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ try {
 ## `listAccounts()`
 
 ```php
-listAccounts(): \OpenAPI\Client\Model\ListAccounts200Response
+listAccounts(): \PostPuma\Model\ListAccounts200Response
 ```
 
 List accounts
@@ -86,10 +86,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\AccountsApi(
+$apiInstance = new PostPuma\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -110,7 +110,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ListAccounts200Response**](../Model/ListAccounts200Response.md)
+[**\PostPuma\Model\ListAccounts200Response**](../Model/ListAccounts200Response.md)
 
 ### Authorization
 

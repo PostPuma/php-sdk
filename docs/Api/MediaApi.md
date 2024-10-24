@@ -1,4 +1,4 @@
-# OpenAPI\Client\MediaApi
+# PostPuma\MediaApi
 
 All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313ie, except if the operation defines another base path.
 
@@ -13,7 +13,7 @@ All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313i
 ## `deleteMediaFiles()`
 
 ```php
-deleteMediaFiles($delete_media_files_request): \OpenAPI\Client\Model\DeleteMediaFiles200Response
+deleteMediaFiles($delete_media_files_request): \PostPuma\Model\DeleteMediaFiles200Response
 ```
 
 Delete media files
@@ -28,16 +28,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\MediaApi(
+$apiInstance = new PostPuma\Api\MediaApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$delete_media_files_request = new \OpenAPI\Client\Model\DeleteMediaFilesRequest(); // \OpenAPI\Client\Model\DeleteMediaFilesRequest
+$delete_media_files_request = new \PostPuma\Model\DeleteMediaFilesRequest(); // \PostPuma\Model\DeleteMediaFilesRequest
 
 try {
     $result = $apiInstance->deleteMediaFiles($delete_media_files_request);
@@ -51,11 +51,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **delete_media_files_request** | [**\OpenAPI\Client\Model\DeleteMediaFilesRequest**](../Model/DeleteMediaFilesRequest.md)|  | [optional] |
+| **delete_media_files_request** | [**\PostPuma\Model\DeleteMediaFilesRequest**](../Model/DeleteMediaFilesRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
+[**\PostPuma\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ try {
 ## `getMediaFile()`
 
 ```php
-getMediaFile($media_uuid): \OpenAPI\Client\Model\MediaFile
+getMediaFile($media_uuid): \PostPuma\Model\MediaFile
 ```
 
 Get media file
@@ -88,10 +88,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\MediaApi(
+$apiInstance = new PostPuma\Api\MediaApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -115,7 +115,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\MediaFile**](../Model/MediaFile.md)
+[**\PostPuma\Model\MediaFile**](../Model/MediaFile.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ try {
 ## `listMediaFiles()`
 
 ```php
-listMediaFiles($page): \OpenAPI\Client\Model\ListMediaFiles200Response
+listMediaFiles($page): \PostPuma\Model\ListMediaFiles200Response
 ```
 
 List media files
@@ -148,10 +148,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\MediaApi(
+$apiInstance = new PostPuma\Api\MediaApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -175,7 +175,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ListMediaFiles200Response**](../Model/ListMediaFiles200Response.md)
+[**\PostPuma\Model\ListMediaFiles200Response**](../Model/ListMediaFiles200Response.md)
 
 ### Authorization
 
@@ -193,7 +193,7 @@ try {
 ## `uploadMediaFile()`
 
 ```php
-uploadMediaFile($file): \OpenAPI\Client\Model\MediaFile
+uploadMediaFile($file): \PostPuma\Model\MediaFile
 ```
 
 Upload media file
@@ -208,10 +208,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\MediaApi(
+$apiInstance = new PostPuma\Api\MediaApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -235,7 +235,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\MediaFile**](../Model/MediaFile.md)
+[**\PostPuma\Model\MediaFile**](../Model/MediaFile.md)
 
 ### Authorization
 

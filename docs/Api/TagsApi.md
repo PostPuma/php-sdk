@@ -1,4 +1,4 @@
-# OpenAPI\Client\TagsApi
+# PostPuma\TagsApi
 
 All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313ie, except if the operation defines another base path.
 
@@ -14,7 +14,7 @@ All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313i
 ## `createTag()`
 
 ```php
-createTag($create_tag_request): \OpenAPI\Client\Model\Tag
+createTag($create_tag_request): \PostPuma\Model\Tag
 ```
 
 Create tag
@@ -29,16 +29,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\TagsApi(
+$apiInstance = new PostPuma\Api\TagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$create_tag_request = new \OpenAPI\Client\Model\CreateTagRequest(); // \OpenAPI\Client\Model\CreateTagRequest
+$create_tag_request = new \PostPuma\Model\CreateTagRequest(); // \PostPuma\Model\CreateTagRequest
 
 try {
     $result = $apiInstance->createTag($create_tag_request);
@@ -52,11 +52,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_tag_request** | [**\OpenAPI\Client\Model\CreateTagRequest**](../Model/CreateTagRequest.md)|  | [optional] |
+| **create_tag_request** | [**\PostPuma\Model\CreateTagRequest**](../Model/CreateTagRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Tag**](../Model/Tag.md)
+[**\PostPuma\Model\Tag**](../Model/Tag.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ try {
 ## `deleteTag()`
 
 ```php
-deleteTag($tag_uuid): \OpenAPI\Client\Model\DeleteMediaFiles200Response
+deleteTag($tag_uuid): \PostPuma\Model\DeleteMediaFiles200Response
 ```
 
 Delete tag
@@ -89,10 +89,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\TagsApi(
+$apiInstance = new PostPuma\Api\TagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -116,7 +116,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
+[**\PostPuma\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ try {
 ## `getTag()`
 
 ```php
-getTag($tag_uuid): \OpenAPI\Client\Model\Tag
+getTag($tag_uuid): \PostPuma\Model\Tag
 ```
 
 Get tag
@@ -149,10 +149,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\TagsApi(
+$apiInstance = new PostPuma\Api\TagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -176,7 +176,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Tag**](../Model/Tag.md)
+[**\PostPuma\Model\Tag**](../Model/Tag.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ try {
 ## `listTags()`
 
 ```php
-listTags(): \OpenAPI\Client\Model\ListTags200Response
+listTags(): \PostPuma\Model\ListTags200Response
 ```
 
 List tags
@@ -209,10 +209,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\TagsApi(
+$apiInstance = new PostPuma\Api\TagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -233,7 +233,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ListTags200Response**](../Model/ListTags200Response.md)
+[**\PostPuma\Model\ListTags200Response**](../Model/ListTags200Response.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ This endpoint does not need any parameter.
 ## `updateTag()`
 
 ```php
-updateTag($tag_uuid, $update_tag_request): \OpenAPI\Client\Model\DeleteMediaFiles200Response
+updateTag($tag_uuid, $update_tag_request): \PostPuma\Model\DeleteMediaFiles200Response
 ```
 
 Update tag
@@ -266,17 +266,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\TagsApi(
+$apiInstance = new PostPuma\Api\TagsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $tag_uuid = 'tag_uuid_example'; // string | Tag UUID
-$update_tag_request = new \OpenAPI\Client\Model\UpdateTagRequest(); // \OpenAPI\Client\Model\UpdateTagRequest
+$update_tag_request = new \PostPuma\Model\UpdateTagRequest(); // \PostPuma\Model\UpdateTagRequest
 
 try {
     $result = $apiInstance->updateTag($tag_uuid, $update_tag_request);
@@ -291,11 +291,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **tag_uuid** | **string**| Tag UUID | |
-| **update_tag_request** | [**\OpenAPI\Client\Model\UpdateTagRequest**](../Model/UpdateTagRequest.md)|  | [optional] |
+| **update_tag_request** | [**\PostPuma\Model\UpdateTagRequest**](../Model/UpdateTagRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
+[**\PostPuma\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
 
 ### Authorization
 

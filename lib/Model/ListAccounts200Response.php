@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PostPuma\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PostPuma\ObjectSerializer;
 
 /**
  * ListAccounts200Response Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ListAccounts200Response implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\OpenAPI\Client\Model\Account[]'
+        'data' => '\PostPuma\Model\Account[]'
     ];
 
     /**
@@ -293,7 +293,7 @@ class ListAccounts200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets data
      *
-     * @return \OpenAPI\Client\Model\Account[]|null
+     * @return \PostPuma\Model\Account[]|null
      */
     public function getData()
     {
@@ -303,7 +303,7 @@ class ListAccounts200Response implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets data
      *
-     * @param \OpenAPI\Client\Model\Account[]|null $data data
+     * @param \PostPuma\Model\Account[]|null $data data
      *
      * @return self
      */

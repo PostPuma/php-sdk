@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PostPuma\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PostPuma\ObjectSerializer;
 
 /**
  * VersionOptionsTiktok Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,13 +58,13 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'privacy_level' => '\OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel',
-        'allow_comments' => '\OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel',
-        'allow_duet' => '\OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel',
-        'allow_stitch' => '\OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel',
-        'content_disclosure' => '\OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel',
-        'brand_organic_toggle' => '\OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel',
-        'brand_content_toggle' => '\OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel'
+        'privacy_level' => '\PostPuma\Model\VersionOptionsTiktokPrivacyLevel',
+        'allow_comments' => '\PostPuma\Model\VersionOptionsTiktokPrivacyLevel',
+        'allow_duet' => '\PostPuma\Model\VersionOptionsTiktokPrivacyLevel',
+        'allow_stitch' => '\PostPuma\Model\VersionOptionsTiktokPrivacyLevel',
+        'content_disclosure' => '\PostPuma\Model\VersionOptionsTiktokPrivacyLevel',
+        'brand_organic_toggle' => '\PostPuma\Model\VersionOptionsTiktokPrivacyLevel',
+        'brand_content_toggle' => '\PostPuma\Model\VersionOptionsTiktokPrivacyLevel'
     ];
 
     /**
@@ -335,7 +335,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets privacy_level
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null
+     * @return \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null
      */
     public function getPrivacyLevel()
     {
@@ -345,7 +345,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets privacy_level
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null $privacy_level privacy_level
+     * @param \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null $privacy_level privacy_level
      *
      * @return self
      */
@@ -362,7 +362,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets allow_comments
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null
+     * @return \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null
      */
     public function getAllowComments()
     {
@@ -372,7 +372,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets allow_comments
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null $allow_comments allow_comments
+     * @param \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null $allow_comments allow_comments
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets allow_duet
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null
+     * @return \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null
      */
     public function getAllowDuet()
     {
@@ -399,7 +399,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets allow_duet
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null $allow_duet allow_duet
+     * @param \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null $allow_duet allow_duet
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets allow_stitch
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null
+     * @return \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null
      */
     public function getAllowStitch()
     {
@@ -426,7 +426,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets allow_stitch
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null $allow_stitch allow_stitch
+     * @param \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null $allow_stitch allow_stitch
      *
      * @return self
      */
@@ -443,7 +443,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets content_disclosure
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null
+     * @return \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null
      */
     public function getContentDisclosure()
     {
@@ -453,7 +453,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets content_disclosure
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null $content_disclosure content_disclosure
+     * @param \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null $content_disclosure content_disclosure
      *
      * @return self
      */
@@ -470,7 +470,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets brand_organic_toggle
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null
+     * @return \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null
      */
     public function getBrandOrganicToggle()
     {
@@ -480,7 +480,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets brand_organic_toggle
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null $brand_organic_toggle brand_organic_toggle
+     * @param \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null $brand_organic_toggle brand_organic_toggle
      *
      * @return self
      */
@@ -497,7 +497,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets brand_content_toggle
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null
+     * @return \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null
      */
     public function getBrandContentToggle()
     {
@@ -507,7 +507,7 @@ class VersionOptionsTiktok implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets brand_content_toggle
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsTiktokPrivacyLevel|null $brand_content_toggle brand_content_toggle
+     * @param \PostPuma\Model\VersionOptionsTiktokPrivacyLevel|null $brand_content_toggle brand_content_toggle
      *
      * @return self
      */

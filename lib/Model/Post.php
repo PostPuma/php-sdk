@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PostPuma\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PostPuma\ObjectSerializer;
 
 /**
  * Post Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,10 +61,10 @@ class Post implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'uuid' => 'string',
         'status' => 'string',
-        'accounts' => '\OpenAPI\Client\Model\Account[]',
-        'versions' => '\OpenAPI\Client\Model\Version[]',
-        'tags' => '\OpenAPI\Client\Model\Tag[]',
-        'user' => '\OpenAPI\Client\Model\PostUser',
+        'accounts' => '\PostPuma\Model\Account[]',
+        'versions' => '\PostPuma\Model\Version[]',
+        'tags' => '\PostPuma\Model\Tag[]',
+        'user' => '\PostPuma\Model\PostUser',
         'scheduled_at' => 'string',
         'published_at' => 'string',
         'created_at' => 'string',
@@ -444,7 +444,7 @@ class Post implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets accounts
      *
-     * @return \OpenAPI\Client\Model\Account[]|null
+     * @return \PostPuma\Model\Account[]|null
      */
     public function getAccounts()
     {
@@ -454,7 +454,7 @@ class Post implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets accounts
      *
-     * @param \OpenAPI\Client\Model\Account[]|null $accounts accounts
+     * @param \PostPuma\Model\Account[]|null $accounts accounts
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class Post implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets versions
      *
-     * @return \OpenAPI\Client\Model\Version[]|null
+     * @return \PostPuma\Model\Version[]|null
      */
     public function getVersions()
     {
@@ -481,7 +481,7 @@ class Post implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets versions
      *
-     * @param \OpenAPI\Client\Model\Version[]|null $versions versions
+     * @param \PostPuma\Model\Version[]|null $versions versions
      *
      * @return self
      */
@@ -498,7 +498,7 @@ class Post implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tags
      *
-     * @return \OpenAPI\Client\Model\Tag[]|null
+     * @return \PostPuma\Model\Tag[]|null
      */
     public function getTags()
     {
@@ -508,7 +508,7 @@ class Post implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tags
      *
-     * @param \OpenAPI\Client\Model\Tag[]|null $tags tags
+     * @param \PostPuma\Model\Tag[]|null $tags tags
      *
      * @return self
      */
@@ -525,7 +525,7 @@ class Post implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets user
      *
-     * @return \OpenAPI\Client\Model\PostUser|null
+     * @return \PostPuma\Model\PostUser|null
      */
     public function getUser()
     {
@@ -535,7 +535,7 @@ class Post implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets user
      *
-     * @param \OpenAPI\Client\Model\PostUser|null $user user
+     * @param \PostPuma\Model\PostUser|null $user user
      *
      * @return self
      */

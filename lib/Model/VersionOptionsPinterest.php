@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PostPuma\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PostPuma\ObjectSerializer;
 
 /**
  * VersionOptionsPinterest Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class VersionOptionsPinterest implements ModelInterface, ArrayAccess, \JsonSeria
     protected static $openAPITypes = [
         'title' => 'string',
         'link' => 'string',
-        'boards' => '\OpenAPI\Client\Model\VersionOptionsPinterestBoards'
+        'boards' => '\PostPuma\Model\VersionOptionsPinterestBoards'
     ];
 
     /**
@@ -361,7 +361,7 @@ class VersionOptionsPinterest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets boards
      *
-     * @return \OpenAPI\Client\Model\VersionOptionsPinterestBoards|null
+     * @return \PostPuma\Model\VersionOptionsPinterestBoards|null
      */
     public function getBoards()
     {
@@ -371,7 +371,7 @@ class VersionOptionsPinterest implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets boards
      *
-     * @param \OpenAPI\Client\Model\VersionOptionsPinterestBoards|null $boards boards
+     * @param \PostPuma\Model\VersionOptionsPinterestBoards|null $boards boards
      *
      * @return self
      */

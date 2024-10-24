@@ -1,4 +1,4 @@
-# OpenAPI\Client\PostsApi
+# PostPuma\PostsApi
 
 All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313ie, except if the operation defines another base path.
 
@@ -17,7 +17,7 @@ All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313i
 ## `createPost()`
 
 ```php
-createPost($create_post_request): \OpenAPI\Client\Model\Post
+createPost($create_post_request): \PostPuma\Model\Post
 ```
 
 Create post
@@ -32,16 +32,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostsApi(
+$apiInstance = new PostPuma\Api\PostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$create_post_request = new \OpenAPI\Client\Model\CreatePostRequest(); // \OpenAPI\Client\Model\CreatePostRequest
+$create_post_request = new \PostPuma\Model\CreatePostRequest(); // \PostPuma\Model\CreatePostRequest
 
 try {
     $result = $apiInstance->createPost($create_post_request);
@@ -55,11 +55,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_post_request** | [**\OpenAPI\Client\Model\CreatePostRequest**](../Model/CreatePostRequest.md)|  | [optional] |
+| **create_post_request** | [**\PostPuma\Model\CreatePostRequest**](../Model/CreatePostRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Post**](../Model/Post.md)
+[**\PostPuma\Model\Post**](../Model/Post.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ try {
 ## `deletePost()`
 
 ```php
-deletePost($post_uuid, $delete_post_request): \OpenAPI\Client\Model\DeletePosts200Response
+deletePost($post_uuid, $delete_post_request): \PostPuma\Model\DeletePosts200Response
 ```
 
 Delete post
@@ -92,17 +92,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostsApi(
+$apiInstance = new PostPuma\Api\PostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
-$delete_post_request = new \OpenAPI\Client\Model\DeletePostRequest(); // \OpenAPI\Client\Model\DeletePostRequest
+$delete_post_request = new \PostPuma\Model\DeletePostRequest(); // \PostPuma\Model\DeletePostRequest
 
 try {
     $result = $apiInstance->deletePost($post_uuid, $delete_post_request);
@@ -117,11 +117,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
-| **delete_post_request** | [**\OpenAPI\Client\Model\DeletePostRequest**](../Model/DeletePostRequest.md)|  | [optional] |
+| **delete_post_request** | [**\PostPuma\Model\DeletePostRequest**](../Model/DeletePostRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DeletePosts200Response**](../Model/DeletePosts200Response.md)
+[**\PostPuma\Model\DeletePosts200Response**](../Model/DeletePosts200Response.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ try {
 ## `deletePosts()`
 
 ```php
-deletePosts($delete_posts_request): \OpenAPI\Client\Model\DeletePosts200Response
+deletePosts($delete_posts_request): \PostPuma\Model\DeletePosts200Response
 ```
 
 Delete posts
@@ -154,16 +154,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostsApi(
+$apiInstance = new PostPuma\Api\PostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$delete_posts_request = new \OpenAPI\Client\Model\DeletePostsRequest(); // \OpenAPI\Client\Model\DeletePostsRequest
+$delete_posts_request = new \PostPuma\Model\DeletePostsRequest(); // \PostPuma\Model\DeletePostsRequest
 
 try {
     $result = $apiInstance->deletePosts($delete_posts_request);
@@ -177,11 +177,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **delete_posts_request** | [**\OpenAPI\Client\Model\DeletePostsRequest**](../Model/DeletePostsRequest.md)|  | [optional] |
+| **delete_posts_request** | [**\PostPuma\Model\DeletePostsRequest**](../Model/DeletePostsRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DeletePosts200Response**](../Model/DeletePosts200Response.md)
+[**\PostPuma\Model\DeletePosts200Response**](../Model/DeletePosts200Response.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ try {
 ## `getPost()`
 
 ```php
-getPost($post_uuid): \OpenAPI\Client\Model\Post
+getPost($post_uuid): \PostPuma\Model\Post
 ```
 
 Get post
@@ -214,10 +214,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostsApi(
+$apiInstance = new PostPuma\Api\PostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -241,7 +241,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Post**](../Model/Post.md)
+[**\PostPuma\Model\Post**](../Model/Post.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ try {
 ## `listPosts()`
 
 ```php
-listPosts($page): \OpenAPI\Client\Model\ListPosts200Response
+listPosts($page): \PostPuma\Model\ListPosts200Response
 ```
 
 List posts
@@ -274,10 +274,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostsApi(
+$apiInstance = new PostPuma\Api\PostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -301,7 +301,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ListPosts200Response**](../Model/ListPosts200Response.md)
+[**\PostPuma\Model\ListPosts200Response**](../Model/ListPosts200Response.md)
 
 ### Authorization
 
@@ -319,7 +319,7 @@ try {
 ## `queuePost()`
 
 ```php
-queuePost($post_uuid): \OpenAPI\Client\Model\QueuePost200Response
+queuePost($post_uuid): \PostPuma\Model\QueuePost200Response
 ```
 
 Queue post
@@ -334,10 +334,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostsApi(
+$apiInstance = new PostPuma\Api\PostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -361,7 +361,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\QueuePost200Response**](../Model/QueuePost200Response.md)
+[**\PostPuma\Model\QueuePost200Response**](../Model/QueuePost200Response.md)
 
 ### Authorization
 
@@ -379,7 +379,7 @@ try {
 ## `schedulePost()`
 
 ```php
-schedulePost($post_uuid, $schedule_post_request): \OpenAPI\Client\Model\QueuePost200Response
+schedulePost($post_uuid, $schedule_post_request): \PostPuma\Model\QueuePost200Response
 ```
 
 Schedule post
@@ -394,17 +394,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostsApi(
+$apiInstance = new PostPuma\Api\PostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
-$schedule_post_request = new \OpenAPI\Client\Model\SchedulePostRequest(); // \OpenAPI\Client\Model\SchedulePostRequest
+$schedule_post_request = new \PostPuma\Model\SchedulePostRequest(); // \PostPuma\Model\SchedulePostRequest
 
 try {
     $result = $apiInstance->schedulePost($post_uuid, $schedule_post_request);
@@ -419,11 +419,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
-| **schedule_post_request** | [**\OpenAPI\Client\Model\SchedulePostRequest**](../Model/SchedulePostRequest.md)|  | [optional] |
+| **schedule_post_request** | [**\PostPuma\Model\SchedulePostRequest**](../Model/SchedulePostRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\QueuePost200Response**](../Model/QueuePost200Response.md)
+[**\PostPuma\Model\QueuePost200Response**](../Model/QueuePost200Response.md)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ try {
 ## `updatePost()`
 
 ```php
-updatePost($post_uuid, $update_post_request): \OpenAPI\Client\Model\DeleteMediaFiles200Response
+updatePost($post_uuid, $update_post_request): \PostPuma\Model\DeleteMediaFiles200Response
 ```
 
 Update post
@@ -456,17 +456,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = PostPuma\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\PostsApi(
+$apiInstance = new PostPuma\Api\PostsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
-$update_post_request = new \OpenAPI\Client\Model\UpdatePostRequest(); // \OpenAPI\Client\Model\UpdatePostRequest
+$update_post_request = new \PostPuma\Model\UpdatePostRequest(); // \PostPuma\Model\UpdatePostRequest
 
 try {
     $result = $apiInstance->updatePost($post_uuid, $update_post_request);
@@ -481,11 +481,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
-| **update_post_request** | [**\OpenAPI\Client\Model\UpdatePostRequest**](../Model/UpdatePostRequest.md)|  | [optional] |
+| **update_post_request** | [**\PostPuma\Model\UpdatePostRequest**](../Model/UpdatePostRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
+[**\PostPuma\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace PostPuma\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \PostPuma\ObjectSerializer;
 
 /**
  * ListMediaFiles200Response Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class ListMediaFiles200Response implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\OpenAPI\Client\Model\MediaFile[]'
+        'data' => '\PostPuma\Model\MediaFile[]'
     ];
 
     /**
@@ -293,7 +293,7 @@ class ListMediaFiles200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets data
      *
-     * @return \OpenAPI\Client\Model\MediaFile[]|null
+     * @return \PostPuma\Model\MediaFile[]|null
      */
     public function getData()
     {
@@ -303,7 +303,7 @@ class ListMediaFiles200Response implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets data
      *
-     * @param \OpenAPI\Client\Model\MediaFile[]|null $data data
+     * @param \PostPuma\Model\MediaFile[]|null $data data
      *
      * @return self
      */
