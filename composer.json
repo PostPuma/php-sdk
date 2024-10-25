@@ -14,8 +14,8 @@
     "license": "unlicense",
     "authors": [
         {
-            "name": "OpenAPI",
-            "homepage": "https://openapi-generator.tech"
+            "name": "PostPuma.com",
+            "homepage": "https://postpuma.com"
         }
     ],
     "require": {
