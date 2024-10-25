@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace PostPuma\PostPumaApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use PostPuma\ApiException;
+use PostPuma\Configuration;
+use PostPuma\HeaderSelector;
+use PostPuma\ObjectSerializer;
 
 /**
  * AccountsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -134,9 +134,9 @@ class AccountsApi
      * @param  string $account_uuid Account UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Account
+     * @return \PostPuma\Model\Account
      */
     public function getAccount($account_uuid, string $contentType = self::contentTypes['getAccount'][0])
     {
@@ -152,9 +152,9 @@ class AccountsApi
      * @param  string $account_uuid Account UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Account, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\Account, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountWithHttpInfo($account_uuid, string $contentType = self::contentTypes['getAccount'][0])
     {
@@ -185,11 +185,11 @@ class AccountsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Account' === '\SplFileObject') {
+                    if ('\PostPuma\Model\Account' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Account' !== 'string') {
+                        if ('\PostPuma\Model\Account' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -207,7 +207,7 @@ class AccountsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Account', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\Account', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -226,7 +226,7 @@ class AccountsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\Account';
+            $returnType = '\PostPuma\Model\Account';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -259,7 +259,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Account',
+                        '\PostPuma\Model\Account',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -303,7 +303,7 @@ class AccountsApi
      */
     public function getAccountAsyncWithHttpInfo($account_uuid, string $contentType = self::contentTypes['getAccount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Account';
+        $returnType = '\PostPuma\Model\Account';
         $request = $this->getAccountRequest($account_uuid, $contentType);
 
         return $this->client
@@ -445,9 +445,9 @@ class AccountsApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ListAccounts200Response
+     * @return \PostPuma\Model\ListAccounts200Response
      */
     public function listAccounts(string $contentType = self::contentTypes['listAccounts'][0])
     {
@@ -462,9 +462,9 @@ class AccountsApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ListAccounts200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\ListAccounts200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAccountsWithHttpInfo(string $contentType = self::contentTypes['listAccounts'][0])
     {
@@ -495,11 +495,11 @@ class AccountsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ListAccounts200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\ListAccounts200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ListAccounts200Response' !== 'string') {
+                        if ('\PostPuma\Model\ListAccounts200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -517,7 +517,7 @@ class AccountsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ListAccounts200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\ListAccounts200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -536,7 +536,7 @@ class AccountsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\ListAccounts200Response';
+            $returnType = '\PostPuma\Model\ListAccounts200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -569,7 +569,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ListAccounts200Response',
+                        '\PostPuma\Model\ListAccounts200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -611,7 +611,7 @@ class AccountsApi
      */
     public function listAccountsAsyncWithHttpInfo(string $contentType = self::contentTypes['listAccounts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ListAccounts200Response';
+        $returnType = '\PostPuma\Model\ListAccounts200Response';
         $request = $this->listAccountsRequest($contentType);
 
         return $this->client

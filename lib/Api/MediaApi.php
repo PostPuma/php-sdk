@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace PostPuma\PostPumaApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use PostPuma\ApiException;
+use PostPuma\Configuration;
+use PostPuma\HeaderSelector;
+use PostPuma\ObjectSerializer;
 
 /**
  * MediaApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -137,12 +137,12 @@ class MediaApi
      *
      * Delete media files
      *
-     * @param  \OpenAPI\Client\Model\DeleteMediaFilesRequest $delete_media_files_request delete_media_files_request (optional)
+     * @param  \PostPuma\Model\DeleteMediaFilesRequest $delete_media_files_request delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\DeleteMediaFiles200Response
+     * @return \PostPuma\Model\DeleteMediaFiles200Response
      */
     public function deleteMediaFiles($delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
     {
@@ -155,12 +155,12 @@ class MediaApi
      *
      * Delete media files
      *
-     * @param  \OpenAPI\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
+     * @param  \PostPuma\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteMediaFilesWithHttpInfo($delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
     {
@@ -191,11 +191,11 @@ class MediaApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\DeleteMediaFiles200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\DeleteMediaFiles200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DeleteMediaFiles200Response' !== 'string') {
+                        if ('\PostPuma\Model\DeleteMediaFiles200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -213,7 +213,7 @@ class MediaApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DeleteMediaFiles200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\DeleteMediaFiles200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -232,7 +232,7 @@ class MediaApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\DeleteMediaFiles200Response';
+            $returnType = '\PostPuma\Model\DeleteMediaFiles200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -265,7 +265,7 @@ class MediaApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DeleteMediaFiles200Response',
+                        '\PostPuma\Model\DeleteMediaFiles200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -280,7 +280,7 @@ class MediaApi
      *
      * Delete media files
      *
-     * @param  \OpenAPI\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
+     * @param  \PostPuma\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -301,7 +301,7 @@ class MediaApi
      *
      * Delete media files
      *
-     * @param  \OpenAPI\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
+     * @param  \PostPuma\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -309,7 +309,7 @@ class MediaApi
      */
     public function deleteMediaFilesAsyncWithHttpInfo($delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\DeleteMediaFiles200Response';
+        $returnType = '\PostPuma\Model\DeleteMediaFiles200Response';
         $request = $this->deleteMediaFilesRequest($delete_media_files_request, $contentType);
 
         return $this->client
@@ -351,7 +351,7 @@ class MediaApi
     /**
      * Create request for operation 'deleteMediaFiles'
      *
-     * @param  \OpenAPI\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
+     * @param  \PostPuma\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -445,9 +445,9 @@ class MediaApi
      * @param  string $media_uuid Media UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\MediaFile
+     * @return \PostPuma\Model\MediaFile
      */
     public function getMediaFile($media_uuid, string $contentType = self::contentTypes['getMediaFile'][0])
     {
@@ -463,9 +463,9 @@ class MediaApi
      * @param  string $media_uuid Media UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\MediaFile, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\MediaFile, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMediaFileWithHttpInfo($media_uuid, string $contentType = self::contentTypes['getMediaFile'][0])
     {
@@ -496,11 +496,11 @@ class MediaApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\MediaFile' === '\SplFileObject') {
+                    if ('\PostPuma\Model\MediaFile' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\MediaFile' !== 'string') {
+                        if ('\PostPuma\Model\MediaFile' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -518,7 +518,7 @@ class MediaApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\MediaFile', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\MediaFile', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -537,7 +537,7 @@ class MediaApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\MediaFile';
+            $returnType = '\PostPuma\Model\MediaFile';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -570,7 +570,7 @@ class MediaApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\MediaFile',
+                        '\PostPuma\Model\MediaFile',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -614,7 +614,7 @@ class MediaApi
      */
     public function getMediaFileAsyncWithHttpInfo($media_uuid, string $contentType = self::contentTypes['getMediaFile'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\MediaFile';
+        $returnType = '\PostPuma\Model\MediaFile';
         $request = $this->getMediaFileRequest($media_uuid, $contentType);
 
         return $this->client
@@ -757,9 +757,9 @@ class MediaApi
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ListMediaFiles200Response
+     * @return \PostPuma\Model\ListMediaFiles200Response
      */
     public function listMediaFiles($page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
     {
@@ -775,9 +775,9 @@ class MediaApi
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ListMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\ListMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function listMediaFilesWithHttpInfo($page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
     {
@@ -808,11 +808,11 @@ class MediaApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ListMediaFiles200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\ListMediaFiles200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ListMediaFiles200Response' !== 'string') {
+                        if ('\PostPuma\Model\ListMediaFiles200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -830,7 +830,7 @@ class MediaApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ListMediaFiles200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\ListMediaFiles200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -849,7 +849,7 @@ class MediaApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\ListMediaFiles200Response';
+            $returnType = '\PostPuma\Model\ListMediaFiles200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -882,7 +882,7 @@ class MediaApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ListMediaFiles200Response',
+                        '\PostPuma\Model\ListMediaFiles200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -926,7 +926,7 @@ class MediaApi
      */
     public function listMediaFilesAsyncWithHttpInfo($page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ListMediaFiles200Response';
+        $returnType = '\PostPuma\Model\ListMediaFiles200Response';
         $request = $this->listMediaFilesRequest($page, $contentType);
 
         return $this->client
@@ -1064,9 +1064,9 @@ class MediaApi
      * @param  \SplFileObject $file file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\MediaFile
+     * @return \PostPuma\Model\MediaFile
      */
     public function uploadMediaFile($file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
     {
@@ -1082,9 +1082,9 @@ class MediaApi
      * @param  \SplFileObject $file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\MediaFile, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\MediaFile, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadMediaFileWithHttpInfo($file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
     {
@@ -1115,11 +1115,11 @@ class MediaApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\MediaFile' === '\SplFileObject') {
+                    if ('\PostPuma\Model\MediaFile' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\MediaFile' !== 'string') {
+                        if ('\PostPuma\Model\MediaFile' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1137,7 +1137,7 @@ class MediaApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\MediaFile', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\MediaFile', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1156,7 +1156,7 @@ class MediaApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\MediaFile';
+            $returnType = '\PostPuma\Model\MediaFile';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1189,7 +1189,7 @@ class MediaApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\MediaFile',
+                        '\PostPuma\Model\MediaFile',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1233,7 +1233,7 @@ class MediaApi
      */
     public function uploadMediaFileAsyncWithHttpInfo($file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\MediaFile';
+        $returnType = '\PostPuma\Model\MediaFile';
         $request = $this->uploadMediaFileRequest($file, $contentType);
 
         return $this->client

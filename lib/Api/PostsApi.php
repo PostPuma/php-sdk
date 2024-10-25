@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace PostPuma\PostPumaApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use PostPuma\ApiException;
+use PostPuma\Configuration;
+use PostPuma\HeaderSelector;
+use PostPuma\ObjectSerializer;
 
 /**
  * PostsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -149,12 +149,12 @@ class PostsApi
      *
      * Create post
      *
-     * @param  \OpenAPI\Client\Model\CreatePostRequest $create_post_request create_post_request (optional)
+     * @param  \PostPuma\Model\CreatePostRequest $create_post_request create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Post
+     * @return \PostPuma\Model\Post
      */
     public function createPost($create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
     {
@@ -167,12 +167,12 @@ class PostsApi
      *
      * Create post
      *
-     * @param  \OpenAPI\Client\Model\CreatePostRequest $create_post_request (optional)
+     * @param  \PostPuma\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Post, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\Post, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPostWithHttpInfo($create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
     {
@@ -203,11 +203,11 @@ class PostsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Post' === '\SplFileObject') {
+                    if ('\PostPuma\Model\Post' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Post' !== 'string') {
+                        if ('\PostPuma\Model\Post' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -225,7 +225,7 @@ class PostsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Post', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\Post', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -244,7 +244,7 @@ class PostsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\Post';
+            $returnType = '\PostPuma\Model\Post';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -277,7 +277,7 @@ class PostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Post',
+                        '\PostPuma\Model\Post',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -292,7 +292,7 @@ class PostsApi
      *
      * Create post
      *
-     * @param  \OpenAPI\Client\Model\CreatePostRequest $create_post_request (optional)
+     * @param  \PostPuma\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -313,7 +313,7 @@ class PostsApi
      *
      * Create post
      *
-     * @param  \OpenAPI\Client\Model\CreatePostRequest $create_post_request (optional)
+     * @param  \PostPuma\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -321,7 +321,7 @@ class PostsApi
      */
     public function createPostAsyncWithHttpInfo($create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Post';
+        $returnType = '\PostPuma\Model\Post';
         $request = $this->createPostRequest($create_post_request, $contentType);
 
         return $this->client
@@ -363,7 +363,7 @@ class PostsApi
     /**
      * Create request for operation 'createPost'
      *
-     * @param  \OpenAPI\Client\Model\CreatePostRequest $create_post_request (optional)
+     * @param  \PostPuma\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -455,12 +455,12 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\DeletePostRequest $delete_post_request delete_post_request (optional)
+     * @param  \PostPuma\Model\DeletePostRequest $delete_post_request delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\DeletePosts200Response
+     * @return \PostPuma\Model\DeletePosts200Response
      */
     public function deletePost($post_uuid, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
     {
@@ -474,12 +474,12 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\DeletePostRequest $delete_post_request (optional)
+     * @param  \PostPuma\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\DeletePosts200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\DeletePosts200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function deletePostWithHttpInfo($post_uuid, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
     {
@@ -510,11 +510,11 @@ class PostsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\DeletePosts200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\DeletePosts200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DeletePosts200Response' !== 'string') {
+                        if ('\PostPuma\Model\DeletePosts200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -532,7 +532,7 @@ class PostsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DeletePosts200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\DeletePosts200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -551,7 +551,7 @@ class PostsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\DeletePosts200Response';
+            $returnType = '\PostPuma\Model\DeletePosts200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -584,7 +584,7 @@ class PostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DeletePosts200Response',
+                        '\PostPuma\Model\DeletePosts200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -600,7 +600,7 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\DeletePostRequest $delete_post_request (optional)
+     * @param  \PostPuma\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -622,7 +622,7 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\DeletePostRequest $delete_post_request (optional)
+     * @param  \PostPuma\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -630,7 +630,7 @@ class PostsApi
      */
     public function deletePostAsyncWithHttpInfo($post_uuid, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\DeletePosts200Response';
+        $returnType = '\PostPuma\Model\DeletePosts200Response';
         $request = $this->deletePostRequest($post_uuid, $delete_post_request, $contentType);
 
         return $this->client
@@ -673,7 +673,7 @@ class PostsApi
      * Create request for operation 'deletePost'
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\DeletePostRequest $delete_post_request (optional)
+     * @param  \PostPuma\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -779,12 +779,12 @@ class PostsApi
      *
      * Delete posts
      *
-     * @param  \OpenAPI\Client\Model\DeletePostsRequest $delete_posts_request delete_posts_request (optional)
+     * @param  \PostPuma\Model\DeletePostsRequest $delete_posts_request delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\DeletePosts200Response
+     * @return \PostPuma\Model\DeletePosts200Response
      */
     public function deletePosts($delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
     {
@@ -797,12 +797,12 @@ class PostsApi
      *
      * Delete posts
      *
-     * @param  \OpenAPI\Client\Model\DeletePostsRequest $delete_posts_request (optional)
+     * @param  \PostPuma\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\DeletePosts200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\DeletePosts200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function deletePostsWithHttpInfo($delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
     {
@@ -833,11 +833,11 @@ class PostsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\DeletePosts200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\DeletePosts200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DeletePosts200Response' !== 'string') {
+                        if ('\PostPuma\Model\DeletePosts200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -855,7 +855,7 @@ class PostsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DeletePosts200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\DeletePosts200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -874,7 +874,7 @@ class PostsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\DeletePosts200Response';
+            $returnType = '\PostPuma\Model\DeletePosts200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -907,7 +907,7 @@ class PostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DeletePosts200Response',
+                        '\PostPuma\Model\DeletePosts200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -922,7 +922,7 @@ class PostsApi
      *
      * Delete posts
      *
-     * @param  \OpenAPI\Client\Model\DeletePostsRequest $delete_posts_request (optional)
+     * @param  \PostPuma\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -943,7 +943,7 @@ class PostsApi
      *
      * Delete posts
      *
-     * @param  \OpenAPI\Client\Model\DeletePostsRequest $delete_posts_request (optional)
+     * @param  \PostPuma\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -951,7 +951,7 @@ class PostsApi
      */
     public function deletePostsAsyncWithHttpInfo($delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\DeletePosts200Response';
+        $returnType = '\PostPuma\Model\DeletePosts200Response';
         $request = $this->deletePostsRequest($delete_posts_request, $contentType);
 
         return $this->client
@@ -993,7 +993,7 @@ class PostsApi
     /**
      * Create request for operation 'deletePosts'
      *
-     * @param  \OpenAPI\Client\Model\DeletePostsRequest $delete_posts_request (optional)
+     * @param  \PostPuma\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1087,9 +1087,9 @@ class PostsApi
      * @param  string $post_uuid Post UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Post
+     * @return \PostPuma\Model\Post
      */
     public function getPost($post_uuid, string $contentType = self::contentTypes['getPost'][0])
     {
@@ -1105,9 +1105,9 @@ class PostsApi
      * @param  string $post_uuid Post UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Post, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\Post, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPostWithHttpInfo($post_uuid, string $contentType = self::contentTypes['getPost'][0])
     {
@@ -1138,11 +1138,11 @@ class PostsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Post' === '\SplFileObject') {
+                    if ('\PostPuma\Model\Post' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Post' !== 'string') {
+                        if ('\PostPuma\Model\Post' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1160,7 +1160,7 @@ class PostsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Post', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\Post', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1179,7 +1179,7 @@ class PostsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\Post';
+            $returnType = '\PostPuma\Model\Post';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1212,7 +1212,7 @@ class PostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Post',
+                        '\PostPuma\Model\Post',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1256,7 +1256,7 @@ class PostsApi
      */
     public function getPostAsyncWithHttpInfo($post_uuid, string $contentType = self::contentTypes['getPost'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Post';
+        $returnType = '\PostPuma\Model\Post';
         $request = $this->getPostRequest($post_uuid, $contentType);
 
         return $this->client
@@ -1399,9 +1399,9 @@ class PostsApi
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ListPosts200Response
+     * @return \PostPuma\Model\ListPosts200Response
      */
     public function listPosts($page = null, string $contentType = self::contentTypes['listPosts'][0])
     {
@@ -1417,9 +1417,9 @@ class PostsApi
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ListPosts200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\ListPosts200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function listPostsWithHttpInfo($page = null, string $contentType = self::contentTypes['listPosts'][0])
     {
@@ -1450,11 +1450,11 @@ class PostsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ListPosts200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\ListPosts200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ListPosts200Response' !== 'string') {
+                        if ('\PostPuma\Model\ListPosts200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1472,7 +1472,7 @@ class PostsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ListPosts200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\ListPosts200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1491,7 +1491,7 @@ class PostsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\ListPosts200Response';
+            $returnType = '\PostPuma\Model\ListPosts200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1524,7 +1524,7 @@ class PostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ListPosts200Response',
+                        '\PostPuma\Model\ListPosts200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1568,7 +1568,7 @@ class PostsApi
      */
     public function listPostsAsyncWithHttpInfo($page = null, string $contentType = self::contentTypes['listPosts'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ListPosts200Response';
+        $returnType = '\PostPuma\Model\ListPosts200Response';
         $request = $this->listPostsRequest($page, $contentType);
 
         return $this->client
@@ -1706,9 +1706,9 @@ class PostsApi
      * @param  string $post_uuid Post UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\QueuePost200Response
+     * @return \PostPuma\Model\QueuePost200Response
      */
     public function queuePost($post_uuid, string $contentType = self::contentTypes['queuePost'][0])
     {
@@ -1724,9 +1724,9 @@ class PostsApi
      * @param  string $post_uuid Post UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\QueuePost200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\QueuePost200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function queuePostWithHttpInfo($post_uuid, string $contentType = self::contentTypes['queuePost'][0])
     {
@@ -1757,11 +1757,11 @@ class PostsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\QueuePost200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\QueuePost200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\QueuePost200Response' !== 'string') {
+                        if ('\PostPuma\Model\QueuePost200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1779,7 +1779,7 @@ class PostsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\QueuePost200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\QueuePost200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1798,7 +1798,7 @@ class PostsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\QueuePost200Response';
+            $returnType = '\PostPuma\Model\QueuePost200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1831,7 +1831,7 @@ class PostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\QueuePost200Response',
+                        '\PostPuma\Model\QueuePost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1875,7 +1875,7 @@ class PostsApi
      */
     public function queuePostAsyncWithHttpInfo($post_uuid, string $contentType = self::contentTypes['queuePost'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\QueuePost200Response';
+        $returnType = '\PostPuma\Model\QueuePost200Response';
         $request = $this->queuePostRequest($post_uuid, $contentType);
 
         return $this->client
@@ -2016,12 +2016,12 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\SchedulePostRequest $schedule_post_request schedule_post_request (optional)
+     * @param  \PostPuma\Model\SchedulePostRequest $schedule_post_request schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\QueuePost200Response
+     * @return \PostPuma\Model\QueuePost200Response
      */
     public function schedulePost($post_uuid, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
     {
@@ -2035,12 +2035,12 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\SchedulePostRequest $schedule_post_request (optional)
+     * @param  \PostPuma\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\QueuePost200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\QueuePost200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function schedulePostWithHttpInfo($post_uuid, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
     {
@@ -2071,11 +2071,11 @@ class PostsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\QueuePost200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\QueuePost200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\QueuePost200Response' !== 'string') {
+                        if ('\PostPuma\Model\QueuePost200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2093,7 +2093,7 @@ class PostsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\QueuePost200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\QueuePost200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2112,7 +2112,7 @@ class PostsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\QueuePost200Response';
+            $returnType = '\PostPuma\Model\QueuePost200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2145,7 +2145,7 @@ class PostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\QueuePost200Response',
+                        '\PostPuma\Model\QueuePost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2161,7 +2161,7 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\SchedulePostRequest $schedule_post_request (optional)
+     * @param  \PostPuma\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2183,7 +2183,7 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\SchedulePostRequest $schedule_post_request (optional)
+     * @param  \PostPuma\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2191,7 +2191,7 @@ class PostsApi
      */
     public function schedulePostAsyncWithHttpInfo($post_uuid, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\QueuePost200Response';
+        $returnType = '\PostPuma\Model\QueuePost200Response';
         $request = $this->schedulePostRequest($post_uuid, $schedule_post_request, $contentType);
 
         return $this->client
@@ -2234,7 +2234,7 @@ class PostsApi
      * Create request for operation 'schedulePost'
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\SchedulePostRequest $schedule_post_request (optional)
+     * @param  \PostPuma\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2341,12 +2341,12 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\UpdatePostRequest $update_post_request update_post_request (optional)
+     * @param  \PostPuma\Model\UpdatePostRequest $update_post_request update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\DeleteMediaFiles200Response
+     * @return \PostPuma\Model\DeleteMediaFiles200Response
      */
     public function updatePost($post_uuid, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
     {
@@ -2360,12 +2360,12 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\UpdatePostRequest $update_post_request (optional)
+     * @param  \PostPuma\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePostWithHttpInfo($post_uuid, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
     {
@@ -2396,11 +2396,11 @@ class PostsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\DeleteMediaFiles200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\DeleteMediaFiles200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DeleteMediaFiles200Response' !== 'string') {
+                        if ('\PostPuma\Model\DeleteMediaFiles200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2418,7 +2418,7 @@ class PostsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DeleteMediaFiles200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\DeleteMediaFiles200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2437,7 +2437,7 @@ class PostsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\DeleteMediaFiles200Response';
+            $returnType = '\PostPuma\Model\DeleteMediaFiles200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2470,7 +2470,7 @@ class PostsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DeleteMediaFiles200Response',
+                        '\PostPuma\Model\DeleteMediaFiles200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2486,7 +2486,7 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\UpdatePostRequest $update_post_request (optional)
+     * @param  \PostPuma\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2508,7 +2508,7 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\UpdatePostRequest $update_post_request (optional)
+     * @param  \PostPuma\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2516,7 +2516,7 @@ class PostsApi
      */
     public function updatePostAsyncWithHttpInfo($post_uuid, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\DeleteMediaFiles200Response';
+        $returnType = '\PostPuma\Model\DeleteMediaFiles200Response';
         $request = $this->updatePostRequest($post_uuid, $update_post_request, $contentType);
 
         return $this->client
@@ -2559,7 +2559,7 @@ class PostsApi
      * Create request for operation 'updatePost'
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  \OpenAPI\Client\Model\UpdatePostRequest $update_post_request (optional)
+     * @param  \PostPuma\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

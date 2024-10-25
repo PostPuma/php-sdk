@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace PostPuma\PostPumaApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use PostPuma\ApiException;
+use PostPuma\Configuration;
+use PostPuma\HeaderSelector;
+use PostPuma\ObjectSerializer;
 
 /**
  * TagsApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  PostPuma
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -140,12 +140,12 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  \OpenAPI\Client\Model\CreateTagRequest $create_tag_request create_tag_request (optional)
+     * @param  \PostPuma\Model\CreateTagRequest $create_tag_request create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Tag
+     * @return \PostPuma\Model\Tag
      */
     public function createTag($create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
     {
@@ -158,12 +158,12 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  \OpenAPI\Client\Model\CreateTagRequest $create_tag_request (optional)
+     * @param  \PostPuma\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Tag, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\Tag, HTTP status code, HTTP response headers (array of strings)
      */
     public function createTagWithHttpInfo($create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
     {
@@ -194,11 +194,11 @@ class TagsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Tag' === '\SplFileObject') {
+                    if ('\PostPuma\Model\Tag' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Tag' !== 'string') {
+                        if ('\PostPuma\Model\Tag' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -216,7 +216,7 @@ class TagsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Tag', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\Tag', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -235,7 +235,7 @@ class TagsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\Tag';
+            $returnType = '\PostPuma\Model\Tag';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -268,7 +268,7 @@ class TagsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Tag',
+                        '\PostPuma\Model\Tag',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -283,7 +283,7 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  \OpenAPI\Client\Model\CreateTagRequest $create_tag_request (optional)
+     * @param  \PostPuma\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -304,7 +304,7 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  \OpenAPI\Client\Model\CreateTagRequest $create_tag_request (optional)
+     * @param  \PostPuma\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -312,7 +312,7 @@ class TagsApi
      */
     public function createTagAsyncWithHttpInfo($create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Tag';
+        $returnType = '\PostPuma\Model\Tag';
         $request = $this->createTagRequest($create_tag_request, $contentType);
 
         return $this->client
@@ -354,7 +354,7 @@ class TagsApi
     /**
      * Create request for operation 'createTag'
      *
-     * @param  \OpenAPI\Client\Model\CreateTagRequest $create_tag_request (optional)
+     * @param  \PostPuma\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -448,9 +448,9 @@ class TagsApi
      * @param  string $tag_uuid Tag UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\DeleteMediaFiles200Response
+     * @return \PostPuma\Model\DeleteMediaFiles200Response
      */
     public function deleteTag($tag_uuid, string $contentType = self::contentTypes['deleteTag'][0])
     {
@@ -466,9 +466,9 @@ class TagsApi
      * @param  string $tag_uuid Tag UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteTagWithHttpInfo($tag_uuid, string $contentType = self::contentTypes['deleteTag'][0])
     {
@@ -499,11 +499,11 @@ class TagsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\DeleteMediaFiles200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\DeleteMediaFiles200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DeleteMediaFiles200Response' !== 'string') {
+                        if ('\PostPuma\Model\DeleteMediaFiles200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -521,7 +521,7 @@ class TagsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DeleteMediaFiles200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\DeleteMediaFiles200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -540,7 +540,7 @@ class TagsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\DeleteMediaFiles200Response';
+            $returnType = '\PostPuma\Model\DeleteMediaFiles200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -573,7 +573,7 @@ class TagsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DeleteMediaFiles200Response',
+                        '\PostPuma\Model\DeleteMediaFiles200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -617,7 +617,7 @@ class TagsApi
      */
     public function deleteTagAsyncWithHttpInfo($tag_uuid, string $contentType = self::contentTypes['deleteTag'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\DeleteMediaFiles200Response';
+        $returnType = '\PostPuma\Model\DeleteMediaFiles200Response';
         $request = $this->deleteTagRequest($tag_uuid, $contentType);
 
         return $this->client
@@ -760,9 +760,9 @@ class TagsApi
      * @param  string $tag_uuid Tag UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\Tag
+     * @return \PostPuma\Model\Tag
      */
     public function getTag($tag_uuid, string $contentType = self::contentTypes['getTag'][0])
     {
@@ -778,9 +778,9 @@ class TagsApi
      * @param  string $tag_uuid Tag UUID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\Tag, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\Tag, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTagWithHttpInfo($tag_uuid, string $contentType = self::contentTypes['getTag'][0])
     {
@@ -811,11 +811,11 @@ class TagsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\Tag' === '\SplFileObject') {
+                    if ('\PostPuma\Model\Tag' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Tag' !== 'string') {
+                        if ('\PostPuma\Model\Tag' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -833,7 +833,7 @@ class TagsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Tag', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\Tag', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -852,7 +852,7 @@ class TagsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\Tag';
+            $returnType = '\PostPuma\Model\Tag';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -885,7 +885,7 @@ class TagsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Tag',
+                        '\PostPuma\Model\Tag',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -929,7 +929,7 @@ class TagsApi
      */
     public function getTagAsyncWithHttpInfo($tag_uuid, string $contentType = self::contentTypes['getTag'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\Tag';
+        $returnType = '\PostPuma\Model\Tag';
         $request = $this->getTagRequest($tag_uuid, $contentType);
 
         return $this->client
@@ -1071,9 +1071,9 @@ class TagsApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ListTags200Response
+     * @return \PostPuma\Model\ListTags200Response
      */
     public function listTags(string $contentType = self::contentTypes['listTags'][0])
     {
@@ -1088,9 +1088,9 @@ class TagsApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ListTags200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\ListTags200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function listTagsWithHttpInfo(string $contentType = self::contentTypes['listTags'][0])
     {
@@ -1121,11 +1121,11 @@ class TagsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ListTags200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\ListTags200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ListTags200Response' !== 'string') {
+                        if ('\PostPuma\Model\ListTags200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1143,7 +1143,7 @@ class TagsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ListTags200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\ListTags200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1162,7 +1162,7 @@ class TagsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\ListTags200Response';
+            $returnType = '\PostPuma\Model\ListTags200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1195,7 +1195,7 @@ class TagsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ListTags200Response',
+                        '\PostPuma\Model\ListTags200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1237,7 +1237,7 @@ class TagsApi
      */
     public function listTagsAsyncWithHttpInfo(string $contentType = self::contentTypes['listTags'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ListTags200Response';
+        $returnType = '\PostPuma\Model\ListTags200Response';
         $request = $this->listTagsRequest($contentType);
 
         return $this->client
@@ -1362,12 +1362,12 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  \OpenAPI\Client\Model\UpdateTagRequest $update_tag_request update_tag_request (optional)
+     * @param  \PostPuma\Model\UpdateTagRequest $update_tag_request update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\DeleteMediaFiles200Response
+     * @return \PostPuma\Model\DeleteMediaFiles200Response
      */
     public function updateTag($tag_uuid, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
     {
@@ -1381,12 +1381,12 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  \OpenAPI\Client\Model\UpdateTagRequest $update_tag_request (optional)
+     * @param  \PostPuma\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \PostPuma\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateTagWithHttpInfo($tag_uuid, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
     {
@@ -1417,11 +1417,11 @@ class TagsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\DeleteMediaFiles200Response' === '\SplFileObject') {
+                    if ('\PostPuma\Model\DeleteMediaFiles200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\DeleteMediaFiles200Response' !== 'string') {
+                        if ('\PostPuma\Model\DeleteMediaFiles200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1439,7 +1439,7 @@ class TagsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\DeleteMediaFiles200Response', []),
+                        ObjectSerializer::deserialize($content, '\PostPuma\Model\DeleteMediaFiles200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1458,7 +1458,7 @@ class TagsApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\DeleteMediaFiles200Response';
+            $returnType = '\PostPuma\Model\DeleteMediaFiles200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1491,7 +1491,7 @@ class TagsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\DeleteMediaFiles200Response',
+                        '\PostPuma\Model\DeleteMediaFiles200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1507,7 +1507,7 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  \OpenAPI\Client\Model\UpdateTagRequest $update_tag_request (optional)
+     * @param  \PostPuma\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1529,7 +1529,7 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  \OpenAPI\Client\Model\UpdateTagRequest $update_tag_request (optional)
+     * @param  \PostPuma\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1537,7 +1537,7 @@ class TagsApi
      */
     public function updateTagAsyncWithHttpInfo($tag_uuid, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\DeleteMediaFiles200Response';
+        $returnType = '\PostPuma\Model\DeleteMediaFiles200Response';
         $request = $this->updateTagRequest($tag_uuid, $update_tag_request, $contentType);
 
         return $this->client
@@ -1580,7 +1580,7 @@ class TagsApi
      * Create request for operation 'updateTag'
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  \OpenAPI\Client\Model\UpdateTagRequest $update_tag_request (optional)
+     * @param  \PostPuma\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
