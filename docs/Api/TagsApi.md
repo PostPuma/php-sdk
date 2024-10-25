@@ -1,6 +1,6 @@
 # PostPuma\TagsApi
 
-All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313ie, except if the operation defines another base path.
+All URIs are relative to https://app.postpuma.com/app/api, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |

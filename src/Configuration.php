@@ -94,7 +94,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313ie';
+    protected $host = 'https://app.postpuma.com/app/api';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -473,14 +473,8 @@ class Configuration
     {
         return [
             [
-                "url" => "{host}",
+                "url" => "https://app.postpuma.com/app/api",
                 "description" => "No description provided",
-                "variables" => [
-                    "host" => [
-                        "description" => "The full PostPuma API path with workspace UUID",
-                        "default_value" => "https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313ie",
-                    ]
-                ]
             ]
         ];
     }
