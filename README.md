@@ -60,9 +60,10 @@ $apiInstance = new PostPuma\Api\AccountsApi(
     $config
 );
 $account_uuid = 'account_uuid_example'; // string | Account UUID
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 
 try {
-    $result = $apiInstance->getAccount($account_uuid);
+    $result = $apiInstance->getAccount($account_uuid, $workspace_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->getAccount: ', $e->getMessage(), PHP_EOL;

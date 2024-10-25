@@ -132,15 +132,16 @@ class AccountsApi
      * Get account
      *
      * @param  string $account_uuid Account UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\Account
      */
-    public function getAccount($account_uuid, string $contentType = self::contentTypes['getAccount'][0])
+    public function getAccount($account_uuid, $workspace_id, string $contentType = self::contentTypes['getAccount'][0])
     {
-        list($response) = $this->getAccountWithHttpInfo($account_uuid, $contentType);
+        list($response) = $this->getAccountWithHttpInfo($account_uuid, $workspace_id, $contentType);
         return $response;
     }
 
@@ -150,15 +151,16 @@ class AccountsApi
      * Get account
      *
      * @param  string $account_uuid Account UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\Account, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAccountWithHttpInfo($account_uuid, string $contentType = self::contentTypes['getAccount'][0])
+    public function getAccountWithHttpInfo($account_uuid, $workspace_id, string $contentType = self::contentTypes['getAccount'][0])
     {
-        $request = $this->getAccountRequest($account_uuid, $contentType);
+        $request = $this->getAccountRequest($account_uuid, $workspace_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -275,14 +277,15 @@ class AccountsApi
      * Get account
      *
      * @param  string $account_uuid Account UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccountAsync($account_uuid, string $contentType = self::contentTypes['getAccount'][0])
+    public function getAccountAsync($account_uuid, $workspace_id, string $contentType = self::contentTypes['getAccount'][0])
     {
-        return $this->getAccountAsyncWithHttpInfo($account_uuid, $contentType)
+        return $this->getAccountAsyncWithHttpInfo($account_uuid, $workspace_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -296,15 +299,16 @@ class AccountsApi
      * Get account
      *
      * @param  string $account_uuid Account UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccountAsyncWithHttpInfo($account_uuid, string $contentType = self::contentTypes['getAccount'][0])
+    public function getAccountAsyncWithHttpInfo($account_uuid, $workspace_id, string $contentType = self::contentTypes['getAccount'][0])
     {
         $returnType = '\PostPuma\Client\Model\Account';
-        $request = $this->getAccountRequest($account_uuid, $contentType);
+        $request = $this->getAccountRequest($account_uuid, $workspace_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -346,18 +350,26 @@ class AccountsApi
      * Create request for operation 'getAccount'
      *
      * @param  string $account_uuid Account UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAccountRequest($account_uuid, string $contentType = self::contentTypes['getAccount'][0])
+    public function getAccountRequest($account_uuid, $workspace_id, string $contentType = self::contentTypes['getAccount'][0])
     {
 
         // verify the required parameter 'account_uuid' is set
         if ($account_uuid === null || (is_array($account_uuid) && count($account_uuid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $account_uuid when calling getAccount'
+            );
+        }
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling getAccount'
             );
         }
 
@@ -376,6 +388,14 @@ class AccountsApi
             $resourcePath = str_replace(
                 '{' . 'accountUuid' . '}',
                 ObjectSerializer::toPathValue($account_uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
                 $resourcePath
             );
         }

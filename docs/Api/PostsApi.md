@@ -17,7 +17,7 @@ All URIs are relative to https://app.postpuma.com/app/api, except if the operati
 ## `createPost()`
 
 ```php
-createPost($create_post_request): \PostPuma\Client\Model\Post
+createPost($workspace_id, $create_post_request): \PostPuma\Client\Model\Post
 ```
 
 Create post
@@ -41,10 +41,11 @@ $apiInstance = new PostPuma\Api\PostsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 $create_post_request = new \PostPuma\Client\Model\CreatePostRequest(); // \PostPuma\Client\Model\CreatePostRequest
 
 try {
-    $result = $apiInstance->createPost($create_post_request);
+    $result = $apiInstance->createPost($workspace_id, $create_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PostsApi->createPost: ', $e->getMessage(), PHP_EOL;
@@ -55,6 +56,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **workspace_id** | **string**| Workspace ID | |
 | **create_post_request** | [**\PostPuma\Client\Model\CreatePostRequest**](../Model/CreatePostRequest.md)|  | [optional] |
 
 ### Return type
@@ -77,7 +79,7 @@ try {
 ## `deletePost()`
 
 ```php
-deletePost($post_uuid, $delete_post_request): \PostPuma\Client\Model\DeletePosts200Response
+deletePost($post_uuid, $workspace_id, $delete_post_request): \PostPuma\Client\Model\DeletePosts200Response
 ```
 
 Delete post
@@ -102,10 +104,11 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 $delete_post_request = new \PostPuma\Client\Model\DeletePostRequest(); // \PostPuma\Client\Model\DeletePostRequest
 
 try {
-    $result = $apiInstance->deletePost($post_uuid, $delete_post_request);
+    $result = $apiInstance->deletePost($post_uuid, $workspace_id, $delete_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PostsApi->deletePost: ', $e->getMessage(), PHP_EOL;
@@ -117,6 +120,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
+| **workspace_id** | **string**| Workspace ID | |
 | **delete_post_request** | [**\PostPuma\Client\Model\DeletePostRequest**](../Model/DeletePostRequest.md)|  | [optional] |
 
 ### Return type
@@ -139,7 +143,7 @@ try {
 ## `deletePosts()`
 
 ```php
-deletePosts($delete_posts_request): \PostPuma\Client\Model\DeletePosts200Response
+deletePosts($workspace_id, $delete_posts_request): \PostPuma\Client\Model\DeletePosts200Response
 ```
 
 Delete posts
@@ -163,10 +167,11 @@ $apiInstance = new PostPuma\Api\PostsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 $delete_posts_request = new \PostPuma\Client\Model\DeletePostsRequest(); // \PostPuma\Client\Model\DeletePostsRequest
 
 try {
-    $result = $apiInstance->deletePosts($delete_posts_request);
+    $result = $apiInstance->deletePosts($workspace_id, $delete_posts_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PostsApi->deletePosts: ', $e->getMessage(), PHP_EOL;
@@ -177,6 +182,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **workspace_id** | **string**| Workspace ID | |
 | **delete_posts_request** | [**\PostPuma\Client\Model\DeletePostsRequest**](../Model/DeletePostsRequest.md)|  | [optional] |
 
 ### Return type
@@ -199,7 +205,7 @@ try {
 ## `getPost()`
 
 ```php
-getPost($post_uuid): \PostPuma\Client\Model\Post
+getPost($post_uuid, $workspace_id): \PostPuma\Client\Model\Post
 ```
 
 Get post
@@ -224,9 +230,10 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 
 try {
-    $result = $apiInstance->getPost($post_uuid);
+    $result = $apiInstance->getPost($post_uuid, $workspace_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PostsApi->getPost: ', $e->getMessage(), PHP_EOL;
@@ -238,6 +245,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
+| **workspace_id** | **string**| Workspace ID | |
 
 ### Return type
 
@@ -259,7 +267,7 @@ try {
 ## `listPosts()`
 
 ```php
-listPosts($page): \PostPuma\Client\Model\ListPosts200Response
+listPosts($workspace_id, $page): \PostPuma\Client\Model\ListPosts200Response
 ```
 
 List posts
@@ -283,10 +291,11 @@ $apiInstance = new PostPuma\Api\PostsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 $page = 56; // int | Page
 
 try {
-    $result = $apiInstance->listPosts($page);
+    $result = $apiInstance->listPosts($workspace_id, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PostsApi->listPosts: ', $e->getMessage(), PHP_EOL;
@@ -297,6 +306,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **workspace_id** | **string**| Workspace ID | |
 | **page** | **int**| Page | [optional] |
 
 ### Return type
@@ -319,7 +329,7 @@ try {
 ## `queuePost()`
 
 ```php
-queuePost($post_uuid): \PostPuma\Client\Model\QueuePost200Response
+queuePost($post_uuid, $workspace_id): \PostPuma\Client\Model\QueuePost200Response
 ```
 
 Queue post
@@ -344,9 +354,10 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 
 try {
-    $result = $apiInstance->queuePost($post_uuid);
+    $result = $apiInstance->queuePost($post_uuid, $workspace_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PostsApi->queuePost: ', $e->getMessage(), PHP_EOL;
@@ -358,6 +369,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
+| **workspace_id** | **string**| Workspace ID | |
 
 ### Return type
 
@@ -379,7 +391,7 @@ try {
 ## `schedulePost()`
 
 ```php
-schedulePost($post_uuid, $schedule_post_request): \PostPuma\Client\Model\QueuePost200Response
+schedulePost($post_uuid, $workspace_id, $schedule_post_request): \PostPuma\Client\Model\QueuePost200Response
 ```
 
 Schedule post
@@ -404,10 +416,11 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 $schedule_post_request = new \PostPuma\Client\Model\SchedulePostRequest(); // \PostPuma\Client\Model\SchedulePostRequest
 
 try {
-    $result = $apiInstance->schedulePost($post_uuid, $schedule_post_request);
+    $result = $apiInstance->schedulePost($post_uuid, $workspace_id, $schedule_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PostsApi->schedulePost: ', $e->getMessage(), PHP_EOL;
@@ -419,6 +432,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
+| **workspace_id** | **string**| Workspace ID | |
 | **schedule_post_request** | [**\PostPuma\Client\Model\SchedulePostRequest**](../Model/SchedulePostRequest.md)|  | [optional] |
 
 ### Return type
@@ -441,7 +455,7 @@ try {
 ## `updatePost()`
 
 ```php
-updatePost($post_uuid, $update_post_request): \PostPuma\Client\Model\DeleteMediaFiles200Response
+updatePost($post_uuid, $workspace_id, $update_post_request): \PostPuma\Client\Model\DeleteMediaFiles200Response
 ```
 
 Update post
@@ -466,10 +480,11 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 $update_post_request = new \PostPuma\Client\Model\UpdatePostRequest(); // \PostPuma\Client\Model\UpdatePostRequest
 
 try {
-    $result = $apiInstance->updatePost($post_uuid, $update_post_request);
+    $result = $apiInstance->updatePost($post_uuid, $workspace_id, $update_post_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PostsApi->updatePost: ', $e->getMessage(), PHP_EOL;
@@ -481,6 +496,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
+| **workspace_id** | **string**| Workspace ID | |
 | **update_post_request** | [**\PostPuma\Client\Model\UpdatePostRequest**](../Model/UpdatePostRequest.md)|  | [optional] |
 
 ### Return type

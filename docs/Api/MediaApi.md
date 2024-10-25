@@ -13,7 +13,7 @@ All URIs are relative to https://app.postpuma.com/app/api, except if the operati
 ## `deleteMediaFiles()`
 
 ```php
-deleteMediaFiles($delete_media_files_request): \PostPuma\Client\Model\DeleteMediaFiles200Response
+deleteMediaFiles($workspace_id, $delete_media_files_request): \PostPuma\Client\Model\DeleteMediaFiles200Response
 ```
 
 Delete media files
@@ -37,10 +37,11 @@ $apiInstance = new PostPuma\Api\MediaApi(
     new GuzzleHttp\Client(),
     $config
 );
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 $delete_media_files_request = new \PostPuma\Client\Model\DeleteMediaFilesRequest(); // \PostPuma\Client\Model\DeleteMediaFilesRequest
 
 try {
-    $result = $apiInstance->deleteMediaFiles($delete_media_files_request);
+    $result = $apiInstance->deleteMediaFiles($workspace_id, $delete_media_files_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MediaApi->deleteMediaFiles: ', $e->getMessage(), PHP_EOL;
@@ -51,6 +52,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **workspace_id** | **string**| Workspace ID | |
 | **delete_media_files_request** | [**\PostPuma\Client\Model\DeleteMediaFilesRequest**](../Model/DeleteMediaFilesRequest.md)|  | [optional] |
 
 ### Return type
@@ -73,7 +75,7 @@ try {
 ## `getMediaFile()`
 
 ```php
-getMediaFile($media_uuid): \PostPuma\Client\Model\MediaFile
+getMediaFile($media_uuid, $workspace_id): \PostPuma\Client\Model\MediaFile
 ```
 
 Get media file
@@ -98,9 +100,10 @@ $apiInstance = new PostPuma\Api\MediaApi(
     $config
 );
 $media_uuid = 'media_uuid_example'; // string | Media UUID
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 
 try {
-    $result = $apiInstance->getMediaFile($media_uuid);
+    $result = $apiInstance->getMediaFile($media_uuid, $workspace_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MediaApi->getMediaFile: ', $e->getMessage(), PHP_EOL;
@@ -112,6 +115,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **media_uuid** | **string**| Media UUID | |
+| **workspace_id** | **string**| Workspace ID | |
 
 ### Return type
 
@@ -133,7 +137,7 @@ try {
 ## `listMediaFiles()`
 
 ```php
-listMediaFiles($page): \PostPuma\Client\Model\ListMediaFiles200Response
+listMediaFiles($workspace_id, $page): \PostPuma\Client\Model\ListMediaFiles200Response
 ```
 
 List media files
@@ -157,10 +161,11 @@ $apiInstance = new PostPuma\Api\MediaApi(
     new GuzzleHttp\Client(),
     $config
 );
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 $page = 56; // int | Page number
 
 try {
-    $result = $apiInstance->listMediaFiles($page);
+    $result = $apiInstance->listMediaFiles($workspace_id, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MediaApi->listMediaFiles: ', $e->getMessage(), PHP_EOL;
@@ -171,6 +176,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **workspace_id** | **string**| Workspace ID | |
 | **page** | **int**| Page number | [optional] |
 
 ### Return type
@@ -193,7 +199,7 @@ try {
 ## `uploadMediaFile()`
 
 ```php
-uploadMediaFile($file): \PostPuma\Client\Model\MediaFile
+uploadMediaFile($workspace_id, $file): \PostPuma\Client\Model\MediaFile
 ```
 
 Upload media file
@@ -217,10 +223,11 @@ $apiInstance = new PostPuma\Api\MediaApi(
     new GuzzleHttp\Client(),
     $config
 );
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 $file = "/path/to/file.txt"; // \SplFileObject
 
 try {
-    $result = $apiInstance->uploadMediaFile($file);
+    $result = $apiInstance->uploadMediaFile($workspace_id, $file);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MediaApi->uploadMediaFile: ', $e->getMessage(), PHP_EOL;
@@ -231,6 +238,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **workspace_id** | **string**| Workspace ID | |
 | **file** | **\SplFileObject****\SplFileObject**|  | [optional] |
 
 ### Return type

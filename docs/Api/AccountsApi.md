@@ -11,7 +11,7 @@ All URIs are relative to https://app.postpuma.com/app/api, except if the operati
 ## `getAccount()`
 
 ```php
-getAccount($account_uuid): \PostPuma\Client\Model\Account
+getAccount($account_uuid, $workspace_id): \PostPuma\Client\Model\Account
 ```
 
 Get account
@@ -36,9 +36,10 @@ $apiInstance = new PostPuma\Api\AccountsApi(
     $config
 );
 $account_uuid = 'account_uuid_example'; // string | Account UUID
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 
 try {
-    $result = $apiInstance->getAccount($account_uuid);
+    $result = $apiInstance->getAccount($account_uuid, $workspace_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->getAccount: ', $e->getMessage(), PHP_EOL;
@@ -50,6 +51,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **account_uuid** | **string**| Account UUID | |
+| **workspace_id** | **string**| Workspace ID | |
 
 ### Return type
 

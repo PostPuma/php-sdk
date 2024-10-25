@@ -140,6 +140,7 @@ class TagsApi
      *
      * Create tag
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\CreateTagRequest $create_tag_request create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
@@ -147,9 +148,9 @@ class TagsApi
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\Tag
      */
-    public function createTag($create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
+    public function createTag($workspace_id, $create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
     {
-        list($response) = $this->createTagWithHttpInfo($create_tag_request, $contentType);
+        list($response) = $this->createTagWithHttpInfo($workspace_id, $create_tag_request, $contentType);
         return $response;
     }
 
@@ -158,6 +159,7 @@ class TagsApi
      *
      * Create tag
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
@@ -165,9 +167,9 @@ class TagsApi
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\Tag, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createTagWithHttpInfo($create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
+    public function createTagWithHttpInfo($workspace_id, $create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
     {
-        $request = $this->createTagRequest($create_tag_request, $contentType);
+        $request = $this->createTagRequest($workspace_id, $create_tag_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -283,15 +285,16 @@ class TagsApi
      *
      * Create tag
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTagAsync($create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
+    public function createTagAsync($workspace_id, $create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
     {
-        return $this->createTagAsyncWithHttpInfo($create_tag_request, $contentType)
+        return $this->createTagAsyncWithHttpInfo($workspace_id, $create_tag_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -304,16 +307,17 @@ class TagsApi
      *
      * Create tag
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createTagAsyncWithHttpInfo($create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
+    public function createTagAsyncWithHttpInfo($workspace_id, $create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
     {
         $returnType = '\PostPuma\Client\Model\Tag';
-        $request = $this->createTagRequest($create_tag_request, $contentType);
+        $request = $this->createTagRequest($workspace_id, $create_tag_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -354,14 +358,22 @@ class TagsApi
     /**
      * Create request for operation 'createTag'
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createTagRequest($create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
+    public function createTagRequest($workspace_id, $create_tag_request = null, string $contentType = self::contentTypes['createTag'][0])
     {
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling createTag'
+            );
+        }
 
 
 
@@ -374,6 +386,14 @@ class TagsApi
 
 
 
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -446,15 +466,16 @@ class TagsApi
      * Delete tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\DeleteMediaFiles200Response
      */
-    public function deleteTag($tag_uuid, string $contentType = self::contentTypes['deleteTag'][0])
+    public function deleteTag($tag_uuid, $workspace_id, string $contentType = self::contentTypes['deleteTag'][0])
     {
-        list($response) = $this->deleteTagWithHttpInfo($tag_uuid, $contentType);
+        list($response) = $this->deleteTagWithHttpInfo($tag_uuid, $workspace_id, $contentType);
         return $response;
     }
 
@@ -464,15 +485,16 @@ class TagsApi
      * Delete tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteTagWithHttpInfo($tag_uuid, string $contentType = self::contentTypes['deleteTag'][0])
+    public function deleteTagWithHttpInfo($tag_uuid, $workspace_id, string $contentType = self::contentTypes['deleteTag'][0])
     {
-        $request = $this->deleteTagRequest($tag_uuid, $contentType);
+        $request = $this->deleteTagRequest($tag_uuid, $workspace_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -589,14 +611,15 @@ class TagsApi
      * Delete tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTagAsync($tag_uuid, string $contentType = self::contentTypes['deleteTag'][0])
+    public function deleteTagAsync($tag_uuid, $workspace_id, string $contentType = self::contentTypes['deleteTag'][0])
     {
-        return $this->deleteTagAsyncWithHttpInfo($tag_uuid, $contentType)
+        return $this->deleteTagAsyncWithHttpInfo($tag_uuid, $workspace_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -610,15 +633,16 @@ class TagsApi
      * Delete tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteTagAsyncWithHttpInfo($tag_uuid, string $contentType = self::contentTypes['deleteTag'][0])
+    public function deleteTagAsyncWithHttpInfo($tag_uuid, $workspace_id, string $contentType = self::contentTypes['deleteTag'][0])
     {
         $returnType = '\PostPuma\Client\Model\DeleteMediaFiles200Response';
-        $request = $this->deleteTagRequest($tag_uuid, $contentType);
+        $request = $this->deleteTagRequest($tag_uuid, $workspace_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -660,18 +684,26 @@ class TagsApi
      * Create request for operation 'deleteTag'
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteTagRequest($tag_uuid, string $contentType = self::contentTypes['deleteTag'][0])
+    public function deleteTagRequest($tag_uuid, $workspace_id, string $contentType = self::contentTypes['deleteTag'][0])
     {
 
         // verify the required parameter 'tag_uuid' is set
         if ($tag_uuid === null || (is_array($tag_uuid) && count($tag_uuid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $tag_uuid when calling deleteTag'
+            );
+        }
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling deleteTag'
             );
         }
 
@@ -690,6 +722,14 @@ class TagsApi
             $resourcePath = str_replace(
                 '{' . 'tagUuid' . '}',
                 ObjectSerializer::toPathValue($tag_uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
                 $resourcePath
             );
         }
@@ -758,15 +798,16 @@ class TagsApi
      * Get tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\Tag
      */
-    public function getTag($tag_uuid, string $contentType = self::contentTypes['getTag'][0])
+    public function getTag($tag_uuid, $workspace_id, string $contentType = self::contentTypes['getTag'][0])
     {
-        list($response) = $this->getTagWithHttpInfo($tag_uuid, $contentType);
+        list($response) = $this->getTagWithHttpInfo($tag_uuid, $workspace_id, $contentType);
         return $response;
     }
 
@@ -776,15 +817,16 @@ class TagsApi
      * Get tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\Tag, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTagWithHttpInfo($tag_uuid, string $contentType = self::contentTypes['getTag'][0])
+    public function getTagWithHttpInfo($tag_uuid, $workspace_id, string $contentType = self::contentTypes['getTag'][0])
     {
-        $request = $this->getTagRequest($tag_uuid, $contentType);
+        $request = $this->getTagRequest($tag_uuid, $workspace_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -901,14 +943,15 @@ class TagsApi
      * Get tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTagAsync($tag_uuid, string $contentType = self::contentTypes['getTag'][0])
+    public function getTagAsync($tag_uuid, $workspace_id, string $contentType = self::contentTypes['getTag'][0])
     {
-        return $this->getTagAsyncWithHttpInfo($tag_uuid, $contentType)
+        return $this->getTagAsyncWithHttpInfo($tag_uuid, $workspace_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -922,15 +965,16 @@ class TagsApi
      * Get tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTagAsyncWithHttpInfo($tag_uuid, string $contentType = self::contentTypes['getTag'][0])
+    public function getTagAsyncWithHttpInfo($tag_uuid, $workspace_id, string $contentType = self::contentTypes['getTag'][0])
     {
         $returnType = '\PostPuma\Client\Model\Tag';
-        $request = $this->getTagRequest($tag_uuid, $contentType);
+        $request = $this->getTagRequest($tag_uuid, $workspace_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -972,18 +1016,26 @@ class TagsApi
      * Create request for operation 'getTag'
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTagRequest($tag_uuid, string $contentType = self::contentTypes['getTag'][0])
+    public function getTagRequest($tag_uuid, $workspace_id, string $contentType = self::contentTypes['getTag'][0])
     {
 
         // verify the required parameter 'tag_uuid' is set
         if ($tag_uuid === null || (is_array($tag_uuid) && count($tag_uuid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $tag_uuid when calling getTag'
+            );
+        }
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling getTag'
             );
         }
 
@@ -1002,6 +1054,14 @@ class TagsApi
             $resourcePath = str_replace(
                 '{' . 'tagUuid' . '}',
                 ObjectSerializer::toPathValue($tag_uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
                 $resourcePath
             );
         }
@@ -1069,15 +1129,16 @@ class TagsApi
      *
      * List tags
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\ListTags200Response
      */
-    public function listTags(string $contentType = self::contentTypes['listTags'][0])
+    public function listTags($workspace_id, string $contentType = self::contentTypes['listTags'][0])
     {
-        list($response) = $this->listTagsWithHttpInfo($contentType);
+        list($response) = $this->listTagsWithHttpInfo($workspace_id, $contentType);
         return $response;
     }
 
@@ -1086,15 +1147,16 @@ class TagsApi
      *
      * List tags
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\ListTags200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listTagsWithHttpInfo(string $contentType = self::contentTypes['listTags'][0])
+    public function listTagsWithHttpInfo($workspace_id, string $contentType = self::contentTypes['listTags'][0])
     {
-        $request = $this->listTagsRequest($contentType);
+        $request = $this->listTagsRequest($workspace_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1210,14 +1272,15 @@ class TagsApi
      *
      * List tags
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTagsAsync(string $contentType = self::contentTypes['listTags'][0])
+    public function listTagsAsync($workspace_id, string $contentType = self::contentTypes['listTags'][0])
     {
-        return $this->listTagsAsyncWithHttpInfo($contentType)
+        return $this->listTagsAsyncWithHttpInfo($workspace_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1230,15 +1293,16 @@ class TagsApi
      *
      * List tags
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listTagsAsyncWithHttpInfo(string $contentType = self::contentTypes['listTags'][0])
+    public function listTagsAsyncWithHttpInfo($workspace_id, string $contentType = self::contentTypes['listTags'][0])
     {
         $returnType = '\PostPuma\Client\Model\ListTags200Response';
-        $request = $this->listTagsRequest($contentType);
+        $request = $this->listTagsRequest($workspace_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1279,13 +1343,21 @@ class TagsApi
     /**
      * Create request for operation 'listTags'
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listTagsRequest(string $contentType = self::contentTypes['listTags'][0])
+    public function listTagsRequest($workspace_id, string $contentType = self::contentTypes['listTags'][0])
     {
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling listTags'
+            );
+        }
 
 
         $resourcePath = '/{workspaceId}/tags';
@@ -1297,6 +1369,14 @@ class TagsApi
 
 
 
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -1362,6 +1442,7 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\UpdateTagRequest $update_tag_request update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
@@ -1369,9 +1450,9 @@ class TagsApi
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\DeleteMediaFiles200Response
      */
-    public function updateTag($tag_uuid, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
+    public function updateTag($tag_uuid, $workspace_id, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
     {
-        list($response) = $this->updateTagWithHttpInfo($tag_uuid, $update_tag_request, $contentType);
+        list($response) = $this->updateTagWithHttpInfo($tag_uuid, $workspace_id, $update_tag_request, $contentType);
         return $response;
     }
 
@@ -1381,6 +1462,7 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
@@ -1388,9 +1470,9 @@ class TagsApi
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateTagWithHttpInfo($tag_uuid, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
+    public function updateTagWithHttpInfo($tag_uuid, $workspace_id, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
     {
-        $request = $this->updateTagRequest($tag_uuid, $update_tag_request, $contentType);
+        $request = $this->updateTagRequest($tag_uuid, $workspace_id, $update_tag_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1507,15 +1589,16 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTagAsync($tag_uuid, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
+    public function updateTagAsync($tag_uuid, $workspace_id, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
     {
-        return $this->updateTagAsyncWithHttpInfo($tag_uuid, $update_tag_request, $contentType)
+        return $this->updateTagAsyncWithHttpInfo($tag_uuid, $workspace_id, $update_tag_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1529,16 +1612,17 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateTagAsyncWithHttpInfo($tag_uuid, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
+    public function updateTagAsyncWithHttpInfo($tag_uuid, $workspace_id, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
     {
         $returnType = '\PostPuma\Client\Model\DeleteMediaFiles200Response';
-        $request = $this->updateTagRequest($tag_uuid, $update_tag_request, $contentType);
+        $request = $this->updateTagRequest($tag_uuid, $workspace_id, $update_tag_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1580,19 +1664,27 @@ class TagsApi
      * Create request for operation 'updateTag'
      *
      * @param  string $tag_uuid Tag UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateTagRequest($tag_uuid, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
+    public function updateTagRequest($tag_uuid, $workspace_id, $update_tag_request = null, string $contentType = self::contentTypes['updateTag'][0])
     {
 
         // verify the required parameter 'tag_uuid' is set
         if ($tag_uuid === null || (is_array($tag_uuid) && count($tag_uuid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $tag_uuid when calling updateTag'
+            );
+        }
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling updateTag'
             );
         }
 
@@ -1612,6 +1704,14 @@ class TagsApi
             $resourcePath = str_replace(
                 '{' . 'tagUuid' . '}',
                 ObjectSerializer::toPathValue($tag_uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
                 $resourcePath
             );
         }

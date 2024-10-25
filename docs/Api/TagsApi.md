@@ -14,7 +14,7 @@ All URIs are relative to https://app.postpuma.com/app/api, except if the operati
 ## `createTag()`
 
 ```php
-createTag($create_tag_request): \PostPuma\Client\Model\Tag
+createTag($workspace_id, $create_tag_request): \PostPuma\Client\Model\Tag
 ```
 
 Create tag
@@ -38,10 +38,11 @@ $apiInstance = new PostPuma\Api\TagsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 $create_tag_request = new \PostPuma\Client\Model\CreateTagRequest(); // \PostPuma\Client\Model\CreateTagRequest
 
 try {
-    $result = $apiInstance->createTag($create_tag_request);
+    $result = $apiInstance->createTag($workspace_id, $create_tag_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->createTag: ', $e->getMessage(), PHP_EOL;
@@ -52,6 +53,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **workspace_id** | **string**| Workspace ID | |
 | **create_tag_request** | [**\PostPuma\Client\Model\CreateTagRequest**](../Model/CreateTagRequest.md)|  | [optional] |
 
 ### Return type
@@ -74,7 +76,7 @@ try {
 ## `deleteTag()`
 
 ```php
-deleteTag($tag_uuid): \PostPuma\Client\Model\DeleteMediaFiles200Response
+deleteTag($tag_uuid, $workspace_id): \PostPuma\Client\Model\DeleteMediaFiles200Response
 ```
 
 Delete tag
@@ -99,9 +101,10 @@ $apiInstance = new PostPuma\Api\TagsApi(
     $config
 );
 $tag_uuid = 'tag_uuid_example'; // string | Tag UUID
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 
 try {
-    $result = $apiInstance->deleteTag($tag_uuid);
+    $result = $apiInstance->deleteTag($tag_uuid, $workspace_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->deleteTag: ', $e->getMessage(), PHP_EOL;
@@ -113,6 +116,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **tag_uuid** | **string**| Tag UUID | |
+| **workspace_id** | **string**| Workspace ID | |
 
 ### Return type
 
@@ -134,7 +138,7 @@ try {
 ## `getTag()`
 
 ```php
-getTag($tag_uuid): \PostPuma\Client\Model\Tag
+getTag($tag_uuid, $workspace_id): \PostPuma\Client\Model\Tag
 ```
 
 Get tag
@@ -159,9 +163,10 @@ $apiInstance = new PostPuma\Api\TagsApi(
     $config
 );
 $tag_uuid = 'tag_uuid_example'; // string | Tag UUID
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 
 try {
-    $result = $apiInstance->getTag($tag_uuid);
+    $result = $apiInstance->getTag($tag_uuid, $workspace_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->getTag: ', $e->getMessage(), PHP_EOL;
@@ -173,6 +178,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **tag_uuid** | **string**| Tag UUID | |
+| **workspace_id** | **string**| Workspace ID | |
 
 ### Return type
 
@@ -194,7 +200,7 @@ try {
 ## `listTags()`
 
 ```php
-listTags(): \PostPuma\Client\Model\ListTags200Response
+listTags($workspace_id): \PostPuma\Client\Model\ListTags200Response
 ```
 
 List tags
@@ -218,9 +224,10 @@ $apiInstance = new PostPuma\Api\TagsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 
 try {
-    $result = $apiInstance->listTags();
+    $result = $apiInstance->listTags($workspace_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->listTags: ', $e->getMessage(), PHP_EOL;
@@ -229,7 +236,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **workspace_id** | **string**| Workspace ID | |
 
 ### Return type
 
@@ -251,7 +260,7 @@ This endpoint does not need any parameter.
 ## `updateTag()`
 
 ```php
-updateTag($tag_uuid, $update_tag_request): \PostPuma\Client\Model\DeleteMediaFiles200Response
+updateTag($tag_uuid, $workspace_id, $update_tag_request): \PostPuma\Client\Model\DeleteMediaFiles200Response
 ```
 
 Update tag
@@ -276,10 +285,11 @@ $apiInstance = new PostPuma\Api\TagsApi(
     $config
 );
 $tag_uuid = 'tag_uuid_example'; // string | Tag UUID
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 $update_tag_request = new \PostPuma\Client\Model\UpdateTagRequest(); // \PostPuma\Client\Model\UpdateTagRequest
 
 try {
-    $result = $apiInstance->updateTag($tag_uuid, $update_tag_request);
+    $result = $apiInstance->updateTag($tag_uuid, $workspace_id, $update_tag_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TagsApi->updateTag: ', $e->getMessage(), PHP_EOL;
@@ -291,6 +301,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **tag_uuid** | **string**| Tag UUID | |
+| **workspace_id** | **string**| Workspace ID | |
 | **update_tag_request** | [**\PostPuma\Client\Model\UpdateTagRequest**](../Model/UpdateTagRequest.md)|  | [optional] |
 
 ### Return type

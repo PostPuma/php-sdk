@@ -137,6 +137,7 @@ class MediaApi
      *
      * Delete media files
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeleteMediaFilesRequest $delete_media_files_request delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
@@ -144,9 +145,9 @@ class MediaApi
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\DeleteMediaFiles200Response
      */
-    public function deleteMediaFiles($delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
+    public function deleteMediaFiles($workspace_id, $delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
     {
-        list($response) = $this->deleteMediaFilesWithHttpInfo($delete_media_files_request, $contentType);
+        list($response) = $this->deleteMediaFilesWithHttpInfo($workspace_id, $delete_media_files_request, $contentType);
         return $response;
     }
 
@@ -155,6 +156,7 @@ class MediaApi
      *
      * Delete media files
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
@@ -162,9 +164,9 @@ class MediaApi
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteMediaFilesWithHttpInfo($delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
+    public function deleteMediaFilesWithHttpInfo($workspace_id, $delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
     {
-        $request = $this->deleteMediaFilesRequest($delete_media_files_request, $contentType);
+        $request = $this->deleteMediaFilesRequest($workspace_id, $delete_media_files_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -280,15 +282,16 @@ class MediaApi
      *
      * Delete media files
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteMediaFilesAsync($delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
+    public function deleteMediaFilesAsync($workspace_id, $delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
     {
-        return $this->deleteMediaFilesAsyncWithHttpInfo($delete_media_files_request, $contentType)
+        return $this->deleteMediaFilesAsyncWithHttpInfo($workspace_id, $delete_media_files_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -301,16 +304,17 @@ class MediaApi
      *
      * Delete media files
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteMediaFilesAsyncWithHttpInfo($delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
+    public function deleteMediaFilesAsyncWithHttpInfo($workspace_id, $delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
     {
         $returnType = '\PostPuma\Client\Model\DeleteMediaFiles200Response';
-        $request = $this->deleteMediaFilesRequest($delete_media_files_request, $contentType);
+        $request = $this->deleteMediaFilesRequest($workspace_id, $delete_media_files_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -351,14 +355,22 @@ class MediaApi
     /**
      * Create request for operation 'deleteMediaFiles'
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deleteMediaFilesRequest($delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
+    public function deleteMediaFilesRequest($workspace_id, $delete_media_files_request = null, string $contentType = self::contentTypes['deleteMediaFiles'][0])
     {
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling deleteMediaFiles'
+            );
+        }
 
 
 
@@ -371,6 +383,14 @@ class MediaApi
 
 
 
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -443,15 +463,16 @@ class MediaApi
      * Get media file
      *
      * @param  string $media_uuid Media UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\MediaFile
      */
-    public function getMediaFile($media_uuid, string $contentType = self::contentTypes['getMediaFile'][0])
+    public function getMediaFile($media_uuid, $workspace_id, string $contentType = self::contentTypes['getMediaFile'][0])
     {
-        list($response) = $this->getMediaFileWithHttpInfo($media_uuid, $contentType);
+        list($response) = $this->getMediaFileWithHttpInfo($media_uuid, $workspace_id, $contentType);
         return $response;
     }
 
@@ -461,15 +482,16 @@ class MediaApi
      * Get media file
      *
      * @param  string $media_uuid Media UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\MediaFile, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMediaFileWithHttpInfo($media_uuid, string $contentType = self::contentTypes['getMediaFile'][0])
+    public function getMediaFileWithHttpInfo($media_uuid, $workspace_id, string $contentType = self::contentTypes['getMediaFile'][0])
     {
-        $request = $this->getMediaFileRequest($media_uuid, $contentType);
+        $request = $this->getMediaFileRequest($media_uuid, $workspace_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -586,14 +608,15 @@ class MediaApi
      * Get media file
      *
      * @param  string $media_uuid Media UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMediaFileAsync($media_uuid, string $contentType = self::contentTypes['getMediaFile'][0])
+    public function getMediaFileAsync($media_uuid, $workspace_id, string $contentType = self::contentTypes['getMediaFile'][0])
     {
-        return $this->getMediaFileAsyncWithHttpInfo($media_uuid, $contentType)
+        return $this->getMediaFileAsyncWithHttpInfo($media_uuid, $workspace_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -607,15 +630,16 @@ class MediaApi
      * Get media file
      *
      * @param  string $media_uuid Media UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMediaFileAsyncWithHttpInfo($media_uuid, string $contentType = self::contentTypes['getMediaFile'][0])
+    public function getMediaFileAsyncWithHttpInfo($media_uuid, $workspace_id, string $contentType = self::contentTypes['getMediaFile'][0])
     {
         $returnType = '\PostPuma\Client\Model\MediaFile';
-        $request = $this->getMediaFileRequest($media_uuid, $contentType);
+        $request = $this->getMediaFileRequest($media_uuid, $workspace_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -657,18 +681,26 @@ class MediaApi
      * Create request for operation 'getMediaFile'
      *
      * @param  string $media_uuid Media UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getMediaFileRequest($media_uuid, string $contentType = self::contentTypes['getMediaFile'][0])
+    public function getMediaFileRequest($media_uuid, $workspace_id, string $contentType = self::contentTypes['getMediaFile'][0])
     {
 
         // verify the required parameter 'media_uuid' is set
         if ($media_uuid === null || (is_array($media_uuid) && count($media_uuid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $media_uuid when calling getMediaFile'
+            );
+        }
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling getMediaFile'
             );
         }
 
@@ -687,6 +719,14 @@ class MediaApi
             $resourcePath = str_replace(
                 '{' . 'mediaUuid' . '}',
                 ObjectSerializer::toPathValue($media_uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
                 $resourcePath
             );
         }
@@ -754,6 +794,7 @@ class MediaApi
      *
      * List media files
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
@@ -761,9 +802,9 @@ class MediaApi
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\ListMediaFiles200Response
      */
-    public function listMediaFiles($page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
+    public function listMediaFiles($workspace_id, $page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
     {
-        list($response) = $this->listMediaFilesWithHttpInfo($page, $contentType);
+        list($response) = $this->listMediaFilesWithHttpInfo($workspace_id, $page, $contentType);
         return $response;
     }
 
@@ -772,6 +813,7 @@ class MediaApi
      *
      * List media files
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
@@ -779,9 +821,9 @@ class MediaApi
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\ListMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMediaFilesWithHttpInfo($page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
+    public function listMediaFilesWithHttpInfo($workspace_id, $page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
     {
-        $request = $this->listMediaFilesRequest($page, $contentType);
+        $request = $this->listMediaFilesRequest($workspace_id, $page, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -897,15 +939,16 @@ class MediaApi
      *
      * List media files
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMediaFilesAsync($page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
+    public function listMediaFilesAsync($workspace_id, $page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
     {
-        return $this->listMediaFilesAsyncWithHttpInfo($page, $contentType)
+        return $this->listMediaFilesAsyncWithHttpInfo($workspace_id, $page, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -918,16 +961,17 @@ class MediaApi
      *
      * List media files
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMediaFilesAsyncWithHttpInfo($page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
+    public function listMediaFilesAsyncWithHttpInfo($workspace_id, $page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
     {
         $returnType = '\PostPuma\Client\Model\ListMediaFiles200Response';
-        $request = $this->listMediaFilesRequest($page, $contentType);
+        $request = $this->listMediaFilesRequest($workspace_id, $page, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -968,14 +1012,22 @@ class MediaApi
     /**
      * Create request for operation 'listMediaFiles'
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listMediaFilesRequest($page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
+    public function listMediaFilesRequest($workspace_id, $page = null, string $contentType = self::contentTypes['listMediaFiles'][0])
     {
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling listMediaFiles'
+            );
+        }
 
 
 
@@ -997,6 +1049,14 @@ class MediaApi
         ) ?? []);
 
 
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -1061,6 +1121,7 @@ class MediaApi
      *
      * Upload media file
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \SplFileObject $file file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *
@@ -1068,9 +1129,9 @@ class MediaApi
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\MediaFile
      */
-    public function uploadMediaFile($file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
+    public function uploadMediaFile($workspace_id, $file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
     {
-        list($response) = $this->uploadMediaFileWithHttpInfo($file, $contentType);
+        list($response) = $this->uploadMediaFileWithHttpInfo($workspace_id, $file, $contentType);
         return $response;
     }
 
@@ -1079,6 +1140,7 @@ class MediaApi
      *
      * Upload media file
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \SplFileObject $file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *
@@ -1086,9 +1148,9 @@ class MediaApi
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\MediaFile, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadMediaFileWithHttpInfo($file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
+    public function uploadMediaFileWithHttpInfo($workspace_id, $file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
     {
-        $request = $this->uploadMediaFileRequest($file, $contentType);
+        $request = $this->uploadMediaFileRequest($workspace_id, $file, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1204,15 +1266,16 @@ class MediaApi
      *
      * Upload media file
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \SplFileObject $file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadMediaFileAsync($file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
+    public function uploadMediaFileAsync($workspace_id, $file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
     {
-        return $this->uploadMediaFileAsyncWithHttpInfo($file, $contentType)
+        return $this->uploadMediaFileAsyncWithHttpInfo($workspace_id, $file, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1225,16 +1288,17 @@ class MediaApi
      *
      * Upload media file
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \SplFileObject $file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadMediaFileAsyncWithHttpInfo($file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
+    public function uploadMediaFileAsyncWithHttpInfo($workspace_id, $file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
     {
         $returnType = '\PostPuma\Client\Model\MediaFile';
-        $request = $this->uploadMediaFileRequest($file, $contentType);
+        $request = $this->uploadMediaFileRequest($workspace_id, $file, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1275,14 +1339,22 @@ class MediaApi
     /**
      * Create request for operation 'uploadMediaFile'
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \SplFileObject $file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function uploadMediaFileRequest($file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
+    public function uploadMediaFileRequest($workspace_id, $file = null, string $contentType = self::contentTypes['uploadMediaFile'][0])
     {
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling uploadMediaFile'
+            );
+        }
 
 
 
@@ -1295,6 +1367,14 @@ class MediaApi
 
 
 
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
+                $resourcePath
+            );
+        }
 
         // form params
         if ($file !== null) {

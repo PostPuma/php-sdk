@@ -149,6 +149,7 @@ class PostsApi
      *
      * Create post
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\CreatePostRequest $create_post_request create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
@@ -156,9 +157,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\Post
      */
-    public function createPost($create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
+    public function createPost($workspace_id, $create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
     {
-        list($response) = $this->createPostWithHttpInfo($create_post_request, $contentType);
+        list($response) = $this->createPostWithHttpInfo($workspace_id, $create_post_request, $contentType);
         return $response;
     }
 
@@ -167,6 +168,7 @@ class PostsApi
      *
      * Create post
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
@@ -174,9 +176,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\Post, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createPostWithHttpInfo($create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
+    public function createPostWithHttpInfo($workspace_id, $create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
     {
-        $request = $this->createPostRequest($create_post_request, $contentType);
+        $request = $this->createPostRequest($workspace_id, $create_post_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -292,15 +294,16 @@ class PostsApi
      *
      * Create post
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPostAsync($create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
+    public function createPostAsync($workspace_id, $create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
     {
-        return $this->createPostAsyncWithHttpInfo($create_post_request, $contentType)
+        return $this->createPostAsyncWithHttpInfo($workspace_id, $create_post_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -313,16 +316,17 @@ class PostsApi
      *
      * Create post
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createPostAsyncWithHttpInfo($create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
+    public function createPostAsyncWithHttpInfo($workspace_id, $create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
     {
         $returnType = '\PostPuma\Client\Model\Post';
-        $request = $this->createPostRequest($create_post_request, $contentType);
+        $request = $this->createPostRequest($workspace_id, $create_post_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -363,14 +367,22 @@ class PostsApi
     /**
      * Create request for operation 'createPost'
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createPostRequest($create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
+    public function createPostRequest($workspace_id, $create_post_request = null, string $contentType = self::contentTypes['createPost'][0])
     {
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling createPost'
+            );
+        }
 
 
 
@@ -383,6 +395,14 @@ class PostsApi
 
 
 
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -455,6 +475,7 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeletePostRequest $delete_post_request delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
@@ -462,9 +483,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\DeletePosts200Response
      */
-    public function deletePost($post_uuid, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
+    public function deletePost($post_uuid, $workspace_id, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
     {
-        list($response) = $this->deletePostWithHttpInfo($post_uuid, $delete_post_request, $contentType);
+        list($response) = $this->deletePostWithHttpInfo($post_uuid, $workspace_id, $delete_post_request, $contentType);
         return $response;
     }
 
@@ -474,6 +495,7 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
@@ -481,9 +503,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\DeletePosts200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletePostWithHttpInfo($post_uuid, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
+    public function deletePostWithHttpInfo($post_uuid, $workspace_id, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
     {
-        $request = $this->deletePostRequest($post_uuid, $delete_post_request, $contentType);
+        $request = $this->deletePostRequest($post_uuid, $workspace_id, $delete_post_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -600,15 +622,16 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePostAsync($post_uuid, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
+    public function deletePostAsync($post_uuid, $workspace_id, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
     {
-        return $this->deletePostAsyncWithHttpInfo($post_uuid, $delete_post_request, $contentType)
+        return $this->deletePostAsyncWithHttpInfo($post_uuid, $workspace_id, $delete_post_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -622,16 +645,17 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePostAsyncWithHttpInfo($post_uuid, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
+    public function deletePostAsyncWithHttpInfo($post_uuid, $workspace_id, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
     {
         $returnType = '\PostPuma\Client\Model\DeletePosts200Response';
-        $request = $this->deletePostRequest($post_uuid, $delete_post_request, $contentType);
+        $request = $this->deletePostRequest($post_uuid, $workspace_id, $delete_post_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -673,19 +697,27 @@ class PostsApi
      * Create request for operation 'deletePost'
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletePostRequest($post_uuid, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
+    public function deletePostRequest($post_uuid, $workspace_id, $delete_post_request = null, string $contentType = self::contentTypes['deletePost'][0])
     {
 
         // verify the required parameter 'post_uuid' is set
         if ($post_uuid === null || (is_array($post_uuid) && count($post_uuid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $post_uuid when calling deletePost'
+            );
+        }
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling deletePost'
             );
         }
 
@@ -705,6 +737,14 @@ class PostsApi
             $resourcePath = str_replace(
                 '{' . 'postUuid' . '}',
                 ObjectSerializer::toPathValue($post_uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
                 $resourcePath
             );
         }
@@ -779,6 +819,7 @@ class PostsApi
      *
      * Delete posts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeletePostsRequest $delete_posts_request delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
@@ -786,9 +827,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\DeletePosts200Response
      */
-    public function deletePosts($delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
+    public function deletePosts($workspace_id, $delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
     {
-        list($response) = $this->deletePostsWithHttpInfo($delete_posts_request, $contentType);
+        list($response) = $this->deletePostsWithHttpInfo($workspace_id, $delete_posts_request, $contentType);
         return $response;
     }
 
@@ -797,6 +838,7 @@ class PostsApi
      *
      * Delete posts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
@@ -804,9 +846,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\DeletePosts200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deletePostsWithHttpInfo($delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
+    public function deletePostsWithHttpInfo($workspace_id, $delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
     {
-        $request = $this->deletePostsRequest($delete_posts_request, $contentType);
+        $request = $this->deletePostsRequest($workspace_id, $delete_posts_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -922,15 +964,16 @@ class PostsApi
      *
      * Delete posts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePostsAsync($delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
+    public function deletePostsAsync($workspace_id, $delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
     {
-        return $this->deletePostsAsyncWithHttpInfo($delete_posts_request, $contentType)
+        return $this->deletePostsAsyncWithHttpInfo($workspace_id, $delete_posts_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -943,16 +986,17 @@ class PostsApi
      *
      * Delete posts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deletePostsAsyncWithHttpInfo($delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
+    public function deletePostsAsyncWithHttpInfo($workspace_id, $delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
     {
         $returnType = '\PostPuma\Client\Model\DeletePosts200Response';
-        $request = $this->deletePostsRequest($delete_posts_request, $contentType);
+        $request = $this->deletePostsRequest($workspace_id, $delete_posts_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -993,14 +1037,22 @@ class PostsApi
     /**
      * Create request for operation 'deletePosts'
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function deletePostsRequest($delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
+    public function deletePostsRequest($workspace_id, $delete_posts_request = null, string $contentType = self::contentTypes['deletePosts'][0])
     {
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling deletePosts'
+            );
+        }
 
 
 
@@ -1013,6 +1065,14 @@ class PostsApi
 
 
 
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -1085,15 +1145,16 @@ class PostsApi
      * Get post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\Post
      */
-    public function getPost($post_uuid, string $contentType = self::contentTypes['getPost'][0])
+    public function getPost($post_uuid, $workspace_id, string $contentType = self::contentTypes['getPost'][0])
     {
-        list($response) = $this->getPostWithHttpInfo($post_uuid, $contentType);
+        list($response) = $this->getPostWithHttpInfo($post_uuid, $workspace_id, $contentType);
         return $response;
     }
 
@@ -1103,15 +1164,16 @@ class PostsApi
      * Get post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\Post, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getPostWithHttpInfo($post_uuid, string $contentType = self::contentTypes['getPost'][0])
+    public function getPostWithHttpInfo($post_uuid, $workspace_id, string $contentType = self::contentTypes['getPost'][0])
     {
-        $request = $this->getPostRequest($post_uuid, $contentType);
+        $request = $this->getPostRequest($post_uuid, $workspace_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1228,14 +1290,15 @@ class PostsApi
      * Get post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPostAsync($post_uuid, string $contentType = self::contentTypes['getPost'][0])
+    public function getPostAsync($post_uuid, $workspace_id, string $contentType = self::contentTypes['getPost'][0])
     {
-        return $this->getPostAsyncWithHttpInfo($post_uuid, $contentType)
+        return $this->getPostAsyncWithHttpInfo($post_uuid, $workspace_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1249,15 +1312,16 @@ class PostsApi
      * Get post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getPostAsyncWithHttpInfo($post_uuid, string $contentType = self::contentTypes['getPost'][0])
+    public function getPostAsyncWithHttpInfo($post_uuid, $workspace_id, string $contentType = self::contentTypes['getPost'][0])
     {
         $returnType = '\PostPuma\Client\Model\Post';
-        $request = $this->getPostRequest($post_uuid, $contentType);
+        $request = $this->getPostRequest($post_uuid, $workspace_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1299,18 +1363,26 @@ class PostsApi
      * Create request for operation 'getPost'
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getPostRequest($post_uuid, string $contentType = self::contentTypes['getPost'][0])
+    public function getPostRequest($post_uuid, $workspace_id, string $contentType = self::contentTypes['getPost'][0])
     {
 
         // verify the required parameter 'post_uuid' is set
         if ($post_uuid === null || (is_array($post_uuid) && count($post_uuid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $post_uuid when calling getPost'
+            );
+        }
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling getPost'
             );
         }
 
@@ -1329,6 +1401,14 @@ class PostsApi
             $resourcePath = str_replace(
                 '{' . 'postUuid' . '}',
                 ObjectSerializer::toPathValue($post_uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
                 $resourcePath
             );
         }
@@ -1396,6 +1476,7 @@ class PostsApi
      *
      * List posts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
@@ -1403,9 +1484,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\ListPosts200Response
      */
-    public function listPosts($page = null, string $contentType = self::contentTypes['listPosts'][0])
+    public function listPosts($workspace_id, $page = null, string $contentType = self::contentTypes['listPosts'][0])
     {
-        list($response) = $this->listPostsWithHttpInfo($page, $contentType);
+        list($response) = $this->listPostsWithHttpInfo($workspace_id, $page, $contentType);
         return $response;
     }
 
@@ -1414,6 +1495,7 @@ class PostsApi
      *
      * List posts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
@@ -1421,9 +1503,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\ListPosts200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listPostsWithHttpInfo($page = null, string $contentType = self::contentTypes['listPosts'][0])
+    public function listPostsWithHttpInfo($workspace_id, $page = null, string $contentType = self::contentTypes['listPosts'][0])
     {
-        $request = $this->listPostsRequest($page, $contentType);
+        $request = $this->listPostsRequest($workspace_id, $page, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1539,15 +1621,16 @@ class PostsApi
      *
      * List posts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPostsAsync($page = null, string $contentType = self::contentTypes['listPosts'][0])
+    public function listPostsAsync($workspace_id, $page = null, string $contentType = self::contentTypes['listPosts'][0])
     {
-        return $this->listPostsAsyncWithHttpInfo($page, $contentType)
+        return $this->listPostsAsyncWithHttpInfo($workspace_id, $page, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1560,16 +1643,17 @@ class PostsApi
      *
      * List posts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listPostsAsyncWithHttpInfo($page = null, string $contentType = self::contentTypes['listPosts'][0])
+    public function listPostsAsyncWithHttpInfo($workspace_id, $page = null, string $contentType = self::contentTypes['listPosts'][0])
     {
         $returnType = '\PostPuma\Client\Model\ListPosts200Response';
-        $request = $this->listPostsRequest($page, $contentType);
+        $request = $this->listPostsRequest($workspace_id, $page, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1610,14 +1694,22 @@ class PostsApi
     /**
      * Create request for operation 'listPosts'
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listPostsRequest($page = null, string $contentType = self::contentTypes['listPosts'][0])
+    public function listPostsRequest($workspace_id, $page = null, string $contentType = self::contentTypes['listPosts'][0])
     {
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling listPosts'
+            );
+        }
 
 
 
@@ -1639,6 +1731,14 @@ class PostsApi
         ) ?? []);
 
 
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -1704,15 +1804,16 @@ class PostsApi
      * Queue post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\QueuePost200Response
      */
-    public function queuePost($post_uuid, string $contentType = self::contentTypes['queuePost'][0])
+    public function queuePost($post_uuid, $workspace_id, string $contentType = self::contentTypes['queuePost'][0])
     {
-        list($response) = $this->queuePostWithHttpInfo($post_uuid, $contentType);
+        list($response) = $this->queuePostWithHttpInfo($post_uuid, $workspace_id, $contentType);
         return $response;
     }
 
@@ -1722,15 +1823,16 @@ class PostsApi
      * Queue post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\QueuePost200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function queuePostWithHttpInfo($post_uuid, string $contentType = self::contentTypes['queuePost'][0])
+    public function queuePostWithHttpInfo($post_uuid, $workspace_id, string $contentType = self::contentTypes['queuePost'][0])
     {
-        $request = $this->queuePostRequest($post_uuid, $contentType);
+        $request = $this->queuePostRequest($post_uuid, $workspace_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1847,14 +1949,15 @@ class PostsApi
      * Queue post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queuePostAsync($post_uuid, string $contentType = self::contentTypes['queuePost'][0])
+    public function queuePostAsync($post_uuid, $workspace_id, string $contentType = self::contentTypes['queuePost'][0])
     {
-        return $this->queuePostAsyncWithHttpInfo($post_uuid, $contentType)
+        return $this->queuePostAsyncWithHttpInfo($post_uuid, $workspace_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1868,15 +1971,16 @@ class PostsApi
      * Queue post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queuePostAsyncWithHttpInfo($post_uuid, string $contentType = self::contentTypes['queuePost'][0])
+    public function queuePostAsyncWithHttpInfo($post_uuid, $workspace_id, string $contentType = self::contentTypes['queuePost'][0])
     {
         $returnType = '\PostPuma\Client\Model\QueuePost200Response';
-        $request = $this->queuePostRequest($post_uuid, $contentType);
+        $request = $this->queuePostRequest($post_uuid, $workspace_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1918,18 +2022,26 @@ class PostsApi
      * Create request for operation 'queuePost'
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function queuePostRequest($post_uuid, string $contentType = self::contentTypes['queuePost'][0])
+    public function queuePostRequest($post_uuid, $workspace_id, string $contentType = self::contentTypes['queuePost'][0])
     {
 
         // verify the required parameter 'post_uuid' is set
         if ($post_uuid === null || (is_array($post_uuid) && count($post_uuid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $post_uuid when calling queuePost'
+            );
+        }
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling queuePost'
             );
         }
 
@@ -1948,6 +2060,14 @@ class PostsApi
             $resourcePath = str_replace(
                 '{' . 'postUuid' . '}',
                 ObjectSerializer::toPathValue($post_uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
                 $resourcePath
             );
         }
@@ -2016,6 +2136,7 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\SchedulePostRequest $schedule_post_request schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
@@ -2023,9 +2144,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\QueuePost200Response
      */
-    public function schedulePost($post_uuid, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
+    public function schedulePost($post_uuid, $workspace_id, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
     {
-        list($response) = $this->schedulePostWithHttpInfo($post_uuid, $schedule_post_request, $contentType);
+        list($response) = $this->schedulePostWithHttpInfo($post_uuid, $workspace_id, $schedule_post_request, $contentType);
         return $response;
     }
 
@@ -2035,6 +2156,7 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
@@ -2042,9 +2164,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\QueuePost200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function schedulePostWithHttpInfo($post_uuid, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
+    public function schedulePostWithHttpInfo($post_uuid, $workspace_id, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
     {
-        $request = $this->schedulePostRequest($post_uuid, $schedule_post_request, $contentType);
+        $request = $this->schedulePostRequest($post_uuid, $workspace_id, $schedule_post_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2161,15 +2283,16 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function schedulePostAsync($post_uuid, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
+    public function schedulePostAsync($post_uuid, $workspace_id, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
     {
-        return $this->schedulePostAsyncWithHttpInfo($post_uuid, $schedule_post_request, $contentType)
+        return $this->schedulePostAsyncWithHttpInfo($post_uuid, $workspace_id, $schedule_post_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2183,16 +2306,17 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function schedulePostAsyncWithHttpInfo($post_uuid, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
+    public function schedulePostAsyncWithHttpInfo($post_uuid, $workspace_id, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
     {
         $returnType = '\PostPuma\Client\Model\QueuePost200Response';
-        $request = $this->schedulePostRequest($post_uuid, $schedule_post_request, $contentType);
+        $request = $this->schedulePostRequest($post_uuid, $workspace_id, $schedule_post_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2234,19 +2358,27 @@ class PostsApi
      * Create request for operation 'schedulePost'
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function schedulePostRequest($post_uuid, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
+    public function schedulePostRequest($post_uuid, $workspace_id, $schedule_post_request = null, string $contentType = self::contentTypes['schedulePost'][0])
     {
 
         // verify the required parameter 'post_uuid' is set
         if ($post_uuid === null || (is_array($post_uuid) && count($post_uuid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $post_uuid when calling schedulePost'
+            );
+        }
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling schedulePost'
             );
         }
 
@@ -2266,6 +2398,14 @@ class PostsApi
             $resourcePath = str_replace(
                 '{' . 'postUuid' . '}',
                 ObjectSerializer::toPathValue($post_uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
                 $resourcePath
             );
         }
@@ -2341,6 +2481,7 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\UpdatePostRequest $update_post_request update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
@@ -2348,9 +2489,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\DeleteMediaFiles200Response
      */
-    public function updatePost($post_uuid, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
+    public function updatePost($post_uuid, $workspace_id, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
     {
-        list($response) = $this->updatePostWithHttpInfo($post_uuid, $update_post_request, $contentType);
+        list($response) = $this->updatePostWithHttpInfo($post_uuid, $workspace_id, $update_post_request, $contentType);
         return $response;
     }
 
@@ -2360,6 +2501,7 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
@@ -2367,9 +2509,9 @@ class PostsApi
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\DeleteMediaFiles200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updatePostWithHttpInfo($post_uuid, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
+    public function updatePostWithHttpInfo($post_uuid, $workspace_id, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
     {
-        $request = $this->updatePostRequest($post_uuid, $update_post_request, $contentType);
+        $request = $this->updatePostRequest($post_uuid, $workspace_id, $update_post_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2486,15 +2628,16 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePostAsync($post_uuid, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
+    public function updatePostAsync($post_uuid, $workspace_id, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
     {
-        return $this->updatePostAsyncWithHttpInfo($post_uuid, $update_post_request, $contentType)
+        return $this->updatePostAsyncWithHttpInfo($post_uuid, $workspace_id, $update_post_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2508,16 +2651,17 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updatePostAsyncWithHttpInfo($post_uuid, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
+    public function updatePostAsyncWithHttpInfo($post_uuid, $workspace_id, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
     {
         $returnType = '\PostPuma\Client\Model\DeleteMediaFiles200Response';
-        $request = $this->updatePostRequest($post_uuid, $update_post_request, $contentType);
+        $request = $this->updatePostRequest($post_uuid, $workspace_id, $update_post_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2559,19 +2703,27 @@ class PostsApi
      * Create request for operation 'updatePost'
      *
      * @param  string $post_uuid Post UUID (required)
+     * @param  string $workspace_id Workspace ID (required)
      * @param  \PostPuma\Client\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updatePostRequest($post_uuid, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
+    public function updatePostRequest($post_uuid, $workspace_id, $update_post_request = null, string $contentType = self::contentTypes['updatePost'][0])
     {
 
         // verify the required parameter 'post_uuid' is set
         if ($post_uuid === null || (is_array($post_uuid) && count($post_uuid) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $post_uuid when calling updatePost'
+            );
+        }
+
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling updatePost'
             );
         }
 
@@ -2591,6 +2743,14 @@ class PostsApi
             $resourcePath = str_replace(
                 '{' . 'postUuid' . '}',
                 ObjectSerializer::toPathValue($post_uuid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
                 $resourcePath
             );
         }
