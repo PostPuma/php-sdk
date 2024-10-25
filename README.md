@@ -72,7 +72,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://app.postpuma.com/app/api/please-replace-with-your-workspace-id*
+All URIs are relative to *https://app.postpuma.com/app/api/-1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

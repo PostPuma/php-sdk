@@ -1,6 +1,6 @@
 # PostPuma\TagsApi
 
-All URIs are relative to https://app.postpuma.com/app/api/please-replace-with-your-workspace-id, except if the operation defines another base path.
+All URIs are relative to https://app.postpuma.com/app/api/-1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
