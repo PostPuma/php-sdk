@@ -443,15 +443,16 @@ class AccountsApi
      *
      * List accounts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \PostPuma\Client\Model\ListAccounts200Response
      */
-    public function listAccounts(string $contentType = self::contentTypes['listAccounts'][0])
+    public function listAccounts($workspace_id, string $contentType = self::contentTypes['listAccounts'][0])
     {
-        list($response) = $this->listAccountsWithHttpInfo($contentType);
+        list($response) = $this->listAccountsWithHttpInfo($workspace_id, $contentType);
         return $response;
     }
 
@@ -460,15 +461,16 @@ class AccountsApi
      *
      * List accounts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \PostPuma\Client\Model\ListAccounts200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listAccountsWithHttpInfo(string $contentType = self::contentTypes['listAccounts'][0])
+    public function listAccountsWithHttpInfo($workspace_id, string $contentType = self::contentTypes['listAccounts'][0])
     {
-        $request = $this->listAccountsRequest($contentType);
+        $request = $this->listAccountsRequest($workspace_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -584,14 +586,15 @@ class AccountsApi
      *
      * List accounts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAccountsAsync(string $contentType = self::contentTypes['listAccounts'][0])
+    public function listAccountsAsync($workspace_id, string $contentType = self::contentTypes['listAccounts'][0])
     {
-        return $this->listAccountsAsyncWithHttpInfo($contentType)
+        return $this->listAccountsAsyncWithHttpInfo($workspace_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -604,15 +607,16 @@ class AccountsApi
      *
      * List accounts
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listAccountsAsyncWithHttpInfo(string $contentType = self::contentTypes['listAccounts'][0])
+    public function listAccountsAsyncWithHttpInfo($workspace_id, string $contentType = self::contentTypes['listAccounts'][0])
     {
         $returnType = '\PostPuma\Client\Model\ListAccounts200Response';
-        $request = $this->listAccountsRequest($contentType);
+        $request = $this->listAccountsRequest($workspace_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -653,16 +657,24 @@ class AccountsApi
     /**
      * Create request for operation 'listAccounts'
      *
+     * @param  string $workspace_id Workspace ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listAccountsRequest(string $contentType = self::contentTypes['listAccounts'][0])
+    public function listAccountsRequest($workspace_id, string $contentType = self::contentTypes['listAccounts'][0])
     {
 
+        // verify the required parameter 'workspace_id' is set
+        if ($workspace_id === null || (is_array($workspace_id) && count($workspace_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workspace_id when calling listAccounts'
+            );
+        }
 
-        $resourcePath = '/accounts';
+
+        $resourcePath = '/{workspaceId}/accounts';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -671,6 +683,14 @@ class AccountsApi
 
 
 
+        // path params
+        if ($workspace_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'workspaceId' . '}',
+                ObjectSerializer::toPathValue($workspace_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(

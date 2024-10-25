@@ -77,7 +77,7 @@ All URIs are relative to *https://app.postpuma.com/app/api*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**getAccount**](docs/Api/AccountsApi.md#getaccount) | **GET** /accounts/{accountUuid} | Get account
-*AccountsApi* | [**listAccounts**](docs/Api/AccountsApi.md#listaccounts) | **GET** /accounts | List accounts
+*AccountsApi* | [**listAccounts**](docs/Api/AccountsApi.md#listaccounts) | **GET** /{workspaceId}/accounts | List accounts
 *MediaApi* | [**deleteMediaFiles**](docs/Api/MediaApi.md#deletemediafiles) | **DELETE** /media | Delete media files
 *MediaApi* | [**getMediaFile**](docs/Api/MediaApi.md#getmediafile) | **GET** /media/{mediaUuid} | Get media file
 *MediaApi* | [**listMediaFiles**](docs/Api/MediaApi.md#listmediafiles) | **GET** /media | List media files

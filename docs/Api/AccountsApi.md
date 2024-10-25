@@ -5,7 +5,7 @@ All URIs are relative to https://app.postpuma.com/app/api, except if the operati
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**getAccount()**](AccountsApi.md#getAccount) | **GET** /accounts/{accountUuid} | Get account |
-| [**listAccounts()**](AccountsApi.md#listAccounts) | **GET** /accounts | List accounts |
+| [**listAccounts()**](AccountsApi.md#listAccounts) | **GET** /{workspaceId}/accounts | List accounts |
 
 
 ## `getAccount()`
@@ -71,7 +71,7 @@ try {
 ## `listAccounts()`
 
 ```php
-listAccounts(): \PostPuma\Client\Model\ListAccounts200Response
+listAccounts($workspace_id): \PostPuma\Client\Model\ListAccounts200Response
 ```
 
 List accounts
@@ -95,9 +95,10 @@ $apiInstance = new PostPuma\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$workspace_id = 'workspace_id_example'; // string | Workspace ID
 
 try {
-    $result = $apiInstance->listAccounts();
+    $result = $apiInstance->listAccounts($workspace_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->listAccounts: ', $e->getMessage(), PHP_EOL;
@@ -106,7 +107,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **workspace_id** | **string**| Workspace ID | |
 
 ### Return type
 
