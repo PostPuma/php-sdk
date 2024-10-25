@@ -60,7 +60,7 @@ $apiInstance = new PostPuma\Api\AccountsApi(
     $config
 );
 $account_uuid = 'account_uuid_example'; // string | Account UUID
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 
 try {
     $result = $apiInstance->getAccount($account_uuid, $workspace_id);

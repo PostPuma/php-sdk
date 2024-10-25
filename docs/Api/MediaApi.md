@@ -37,7 +37,7 @@ $apiInstance = new PostPuma\Api\MediaApi(
     new GuzzleHttp\Client(),
     $config
 );
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 $delete_media_files_request = new \PostPuma\Client\Model\DeleteMediaFilesRequest(); // \PostPuma\Client\Model\DeleteMediaFilesRequest
 
 try {
@@ -52,7 +52,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 | **delete_media_files_request** | [**\PostPuma\Client\Model\DeleteMediaFilesRequest**](../Model/DeleteMediaFilesRequest.md)|  | [optional] |
 
 ### Return type
@@ -100,7 +100,7 @@ $apiInstance = new PostPuma\Api\MediaApi(
     $config
 );
 $media_uuid = 'media_uuid_example'; // string | Media UUID
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 
 try {
     $result = $apiInstance->getMediaFile($media_uuid, $workspace_id);
@@ -115,7 +115,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **media_uuid** | **string**| Media UUID | |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 
 ### Return type
 
@@ -161,7 +161,7 @@ $apiInstance = new PostPuma\Api\MediaApi(
     new GuzzleHttp\Client(),
     $config
 );
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 $page = 56; // int | Page number
 
 try {
@@ -176,7 +176,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 | **page** | **int**| Page number | [optional] |
 
 ### Return type
@@ -223,7 +223,7 @@ $apiInstance = new PostPuma\Api\MediaApi(
     new GuzzleHttp\Client(),
     $config
 );
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 $file = "/path/to/file.txt"; // \SplFileObject
 
 try {
@@ -238,7 +238,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 | **file** | **\SplFileObject****\SplFileObject**|  | [optional] |
 
 ### Return type

@@ -137,7 +137,7 @@ class MediaApi
      *
      * Delete media files
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  \PostPuma\Client\Model\DeleteMediaFilesRequest $delete_media_files_request delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
@@ -156,7 +156,7 @@ class MediaApi
      *
      * Delete media files
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
@@ -282,7 +282,7 @@ class MediaApi
      *
      * Delete media files
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
@@ -304,7 +304,7 @@ class MediaApi
      *
      * Delete media files
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
@@ -355,7 +355,7 @@ class MediaApi
     /**
      * Create request for operation 'deleteMediaFiles'
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeleteMediaFilesRequest $delete_media_files_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteMediaFiles'] to see the possible values for this operation
      *
@@ -463,7 +463,7 @@ class MediaApi
      * Get media file
      *
      * @param  string $media_uuid Media UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -482,7 +482,7 @@ class MediaApi
      * Get media file
      *
      * @param  string $media_uuid Media UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -608,7 +608,7 @@ class MediaApi
      * Get media file
      *
      * @param  string $media_uuid Media UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -630,7 +630,7 @@ class MediaApi
      * Get media file
      *
      * @param  string $media_uuid Media UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -681,7 +681,7 @@ class MediaApi
      * Create request for operation 'getMediaFile'
      *
      * @param  string $media_uuid Media UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMediaFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -794,7 +794,7 @@ class MediaApi
      *
      * List media files
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
@@ -813,7 +813,7 @@ class MediaApi
      *
      * List media files
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
@@ -939,7 +939,7 @@ class MediaApi
      *
      * List media files
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
@@ -961,7 +961,7 @@ class MediaApi
      *
      * List media files
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
@@ -1012,7 +1012,7 @@ class MediaApi
     /**
      * Create request for operation 'listMediaFiles'
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  int $page Page number (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listMediaFiles'] to see the possible values for this operation
      *
@@ -1121,7 +1121,7 @@ class MediaApi
      *
      * Upload media file
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  \SplFileObject $file file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *
@@ -1140,7 +1140,7 @@ class MediaApi
      *
      * Upload media file
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \SplFileObject $file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *
@@ -1266,7 +1266,7 @@ class MediaApi
      *
      * Upload media file
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \SplFileObject $file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *
@@ -1288,7 +1288,7 @@ class MediaApi
      *
      * Upload media file
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \SplFileObject $file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *
@@ -1339,7 +1339,7 @@ class MediaApi
     /**
      * Create request for operation 'uploadMediaFile'
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \SplFileObject $file (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['uploadMediaFile'] to see the possible values for this operation
      *

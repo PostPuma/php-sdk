@@ -132,7 +132,7 @@ class AccountsApi
      * Get account
      *
      * @param  string $account_uuid Account UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -151,7 +151,7 @@ class AccountsApi
      * Get account
      *
      * @param  string $account_uuid Account UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -277,7 +277,7 @@ class AccountsApi
      * Get account
      *
      * @param  string $account_uuid Account UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -299,7 +299,7 @@ class AccountsApi
      * Get account
      *
      * @param  string $account_uuid Account UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -350,7 +350,7 @@ class AccountsApi
      * Create request for operation 'getAccount'
      *
      * @param  string $account_uuid Account UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -463,7 +463,7 @@ class AccountsApi
      *
      * List accounts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -481,7 +481,7 @@ class AccountsApi
      *
      * List accounts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -606,7 +606,7 @@ class AccountsApi
      *
      * List accounts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -627,7 +627,7 @@ class AccountsApi
      *
      * List accounts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -677,7 +677,7 @@ class AccountsApi
     /**
      * Create request for operation 'listAccounts'
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listAccounts'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

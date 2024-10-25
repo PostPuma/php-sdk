@@ -41,7 +41,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 $create_post_request = new \PostPuma\Client\Model\CreatePostRequest(); // \PostPuma\Client\Model\CreatePostRequest
 
 try {
@@ -56,7 +56,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 | **create_post_request** | [**\PostPuma\Client\Model\CreatePostRequest**](../Model/CreatePostRequest.md)|  | [optional] |
 
 ### Return type
@@ -104,7 +104,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 $delete_post_request = new \PostPuma\Client\Model\DeletePostRequest(); // \PostPuma\Client\Model\DeletePostRequest
 
 try {
@@ -120,7 +120,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 | **delete_post_request** | [**\PostPuma\Client\Model\DeletePostRequest**](../Model/DeletePostRequest.md)|  | [optional] |
 
 ### Return type
@@ -167,7 +167,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 $delete_posts_request = new \PostPuma\Client\Model\DeletePostsRequest(); // \PostPuma\Client\Model\DeletePostsRequest
 
 try {
@@ -182,7 +182,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 | **delete_posts_request** | [**\PostPuma\Client\Model\DeletePostsRequest**](../Model/DeletePostsRequest.md)|  | [optional] |
 
 ### Return type
@@ -230,7 +230,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 
 try {
     $result = $apiInstance->getPost($post_uuid, $workspace_id);
@@ -245,7 +245,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 
 ### Return type
 
@@ -291,7 +291,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 $page = 56; // int | Page
 
 try {
@@ -306,7 +306,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 | **page** | **int**| Page | [optional] |
 
 ### Return type
@@ -354,7 +354,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 
 try {
     $result = $apiInstance->queuePost($post_uuid, $workspace_id);
@@ -369,7 +369,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 
 ### Return type
 
@@ -416,7 +416,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 $schedule_post_request = new \PostPuma\Client\Model\SchedulePostRequest(); // \PostPuma\Client\Model\SchedulePostRequest
 
 try {
@@ -432,7 +432,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 | **schedule_post_request** | [**\PostPuma\Client\Model\SchedulePostRequest**](../Model/SchedulePostRequest.md)|  | [optional] |
 
 ### Return type
@@ -480,7 +480,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 $update_post_request = new \PostPuma\Client\Model\UpdatePostRequest(); // \PostPuma\Client\Model\UpdatePostRequest
 
 try {
@@ -496,7 +496,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 | **update_post_request** | [**\PostPuma\Client\Model\UpdatePostRequest**](../Model/UpdatePostRequest.md)|  | [optional] |
 
 ### Return type

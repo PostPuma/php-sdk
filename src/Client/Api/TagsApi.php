@@ -140,7 +140,7 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  \PostPuma\Client\Model\CreateTagRequest $create_tag_request create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
@@ -159,7 +159,7 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
@@ -285,7 +285,7 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
@@ -307,7 +307,7 @@ class TagsApi
      *
      * Create tag
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
@@ -358,7 +358,7 @@ class TagsApi
     /**
      * Create request for operation 'createTag'
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\CreateTagRequest $create_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTag'] to see the possible values for this operation
      *
@@ -466,7 +466,7 @@ class TagsApi
      * Delete tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -485,7 +485,7 @@ class TagsApi
      * Delete tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -611,7 +611,7 @@ class TagsApi
      * Delete tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -633,7 +633,7 @@ class TagsApi
      * Delete tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -684,7 +684,7 @@ class TagsApi
      * Create request for operation 'deleteTag'
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -798,7 +798,7 @@ class TagsApi
      * Get tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -817,7 +817,7 @@ class TagsApi
      * Get tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -943,7 +943,7 @@ class TagsApi
      * Get tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -965,7 +965,7 @@ class TagsApi
      * Get tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1016,7 +1016,7 @@ class TagsApi
      * Create request for operation 'getTag'
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTag'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1129,7 +1129,7 @@ class TagsApi
      *
      * List tags
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1147,7 +1147,7 @@ class TagsApi
      *
      * List tags
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1272,7 +1272,7 @@ class TagsApi
      *
      * List tags
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1293,7 +1293,7 @@ class TagsApi
      *
      * List tags
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1343,7 +1343,7 @@ class TagsApi
     /**
      * Create request for operation 'listTags'
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listTags'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1442,7 +1442,7 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  \PostPuma\Client\Model\UpdateTagRequest $update_tag_request update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
@@ -1462,7 +1462,7 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
@@ -1589,7 +1589,7 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
@@ -1612,7 +1612,7 @@ class TagsApi
      * Update tag
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *
@@ -1664,7 +1664,7 @@ class TagsApi
      * Create request for operation 'updateTag'
      *
      * @param  string $tag_uuid Tag UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\UpdateTagRequest $update_tag_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateTag'] to see the possible values for this operation
      *

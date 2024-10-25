@@ -149,7 +149,7 @@ class PostsApi
      *
      * Create post
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  \PostPuma\Client\Model\CreatePostRequest $create_post_request create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
@@ -168,7 +168,7 @@ class PostsApi
      *
      * Create post
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
@@ -294,7 +294,7 @@ class PostsApi
      *
      * Create post
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
@@ -316,7 +316,7 @@ class PostsApi
      *
      * Create post
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
@@ -367,7 +367,7 @@ class PostsApi
     /**
      * Create request for operation 'createPost'
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\CreatePostRequest $create_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPost'] to see the possible values for this operation
      *
@@ -475,7 +475,7 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  \PostPuma\Client\Model\DeletePostRequest $delete_post_request delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
@@ -495,7 +495,7 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
@@ -622,7 +622,7 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
@@ -645,7 +645,7 @@ class PostsApi
      * Delete post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
@@ -697,7 +697,7 @@ class PostsApi
      * Create request for operation 'deletePost'
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeletePostRequest $delete_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePost'] to see the possible values for this operation
      *
@@ -819,7 +819,7 @@ class PostsApi
      *
      * Delete posts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  \PostPuma\Client\Model\DeletePostsRequest $delete_posts_request delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
@@ -838,7 +838,7 @@ class PostsApi
      *
      * Delete posts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
@@ -964,7 +964,7 @@ class PostsApi
      *
      * Delete posts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
@@ -986,7 +986,7 @@ class PostsApi
      *
      * Delete posts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
@@ -1037,7 +1037,7 @@ class PostsApi
     /**
      * Create request for operation 'deletePosts'
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\DeletePostsRequest $delete_posts_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deletePosts'] to see the possible values for this operation
      *
@@ -1145,7 +1145,7 @@ class PostsApi
      * Get post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1164,7 +1164,7 @@ class PostsApi
      * Get post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1290,7 +1290,7 @@ class PostsApi
      * Get post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1312,7 +1312,7 @@ class PostsApi
      * Get post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1363,7 +1363,7 @@ class PostsApi
      * Create request for operation 'getPost'
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1476,7 +1476,7 @@ class PostsApi
      *
      * List posts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
@@ -1495,7 +1495,7 @@ class PostsApi
      *
      * List posts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
@@ -1621,7 +1621,7 @@ class PostsApi
      *
      * List posts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
@@ -1643,7 +1643,7 @@ class PostsApi
      *
      * List posts
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
@@ -1694,7 +1694,7 @@ class PostsApi
     /**
      * Create request for operation 'listPosts'
      *
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  int $page Page (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listPosts'] to see the possible values for this operation
      *
@@ -1804,7 +1804,7 @@ class PostsApi
      * Queue post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1823,7 +1823,7 @@ class PostsApi
      * Queue post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
      * @throws \PostPuma\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1949,7 +1949,7 @@ class PostsApi
      * Queue post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1971,7 +1971,7 @@ class PostsApi
      * Queue post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2022,7 +2022,7 @@ class PostsApi
      * Create request for operation 'queuePost'
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['queuePost'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2136,7 +2136,7 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  \PostPuma\Client\Model\SchedulePostRequest $schedule_post_request schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
@@ -2156,7 +2156,7 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
@@ -2283,7 +2283,7 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
@@ -2306,7 +2306,7 @@ class PostsApi
      * Schedule post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
@@ -2358,7 +2358,7 @@ class PostsApi
      * Create request for operation 'schedulePost'
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\SchedulePostRequest $schedule_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['schedulePost'] to see the possible values for this operation
      *
@@ -2481,7 +2481,7 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id workspace_id (required)
      * @param  \PostPuma\Client\Model\UpdatePostRequest $update_post_request update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
@@ -2501,7 +2501,7 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
@@ -2628,7 +2628,7 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
@@ -2651,7 +2651,7 @@ class PostsApi
      * Update post
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *
@@ -2703,7 +2703,7 @@ class PostsApi
      * Create request for operation 'updatePost'
      *
      * @param  string $post_uuid Post UUID (required)
-     * @param  string $workspace_id Workspace ID (required)
+     * @param  string $workspace_id (required)
      * @param  \PostPuma\Client\Model\UpdatePostRequest $update_post_request (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updatePost'] to see the possible values for this operation
      *

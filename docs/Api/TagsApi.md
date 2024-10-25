@@ -38,7 +38,7 @@ $apiInstance = new PostPuma\Api\TagsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 $create_tag_request = new \PostPuma\Client\Model\CreateTagRequest(); // \PostPuma\Client\Model\CreateTagRequest
 
 try {
@@ -53,7 +53,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 | **create_tag_request** | [**\PostPuma\Client\Model\CreateTagRequest**](../Model/CreateTagRequest.md)|  | [optional] |
 
 ### Return type
@@ -101,7 +101,7 @@ $apiInstance = new PostPuma\Api\TagsApi(
     $config
 );
 $tag_uuid = 'tag_uuid_example'; // string | Tag UUID
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 
 try {
     $result = $apiInstance->deleteTag($tag_uuid, $workspace_id);
@@ -116,7 +116,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **tag_uuid** | **string**| Tag UUID | |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 
 ### Return type
 
@@ -163,7 +163,7 @@ $apiInstance = new PostPuma\Api\TagsApi(
     $config
 );
 $tag_uuid = 'tag_uuid_example'; // string | Tag UUID
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 
 try {
     $result = $apiInstance->getTag($tag_uuid, $workspace_id);
@@ -178,7 +178,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **tag_uuid** | **string**| Tag UUID | |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 
 ### Return type
 
@@ -224,7 +224,7 @@ $apiInstance = new PostPuma\Api\TagsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 
 try {
     $result = $apiInstance->listTags($workspace_id);
@@ -238,7 +238,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 
 ### Return type
 
@@ -285,7 +285,7 @@ $apiInstance = new PostPuma\Api\TagsApi(
     $config
 );
 $tag_uuid = 'tag_uuid_example'; // string | Tag UUID
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 $update_tag_request = new \PostPuma\Client\Model\UpdateTagRequest(); // \PostPuma\Client\Model\UpdateTagRequest
 
 try {
@@ -301,7 +301,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **tag_uuid** | **string**| Tag UUID | |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 | **update_tag_request** | [**\PostPuma\Client\Model\UpdateTagRequest**](../Model/UpdateTagRequest.md)|  | [optional] |
 
 ### Return type

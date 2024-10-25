@@ -36,7 +36,7 @@ $apiInstance = new PostPuma\Api\AccountsApi(
     $config
 );
 $account_uuid = 'account_uuid_example'; // string | Account UUID
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 
 try {
     $result = $apiInstance->getAccount($account_uuid, $workspace_id);
@@ -51,7 +51,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **account_uuid** | **string**| Account UUID | |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 
 ### Return type
 
@@ -97,7 +97,7 @@ $apiInstance = new PostPuma\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$workspace_id = 'workspace_id_example'; // string | Workspace ID
+$workspace_id = 'workspace_id_example'; // string
 
 try {
     $result = $apiInstance->listAccounts($workspace_id);
@@ -111,7 +111,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workspace_id** | **string**| Workspace ID | |
+| **workspace_id** | **string**|  | |
 
 ### Return type
 
