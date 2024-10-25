@@ -94,7 +94,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://app.postpuma.com/app/api';
+    protected $host = 'https://app.postpuma.com/app/api/Your workspace base path';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -473,12 +473,16 @@ class Configuration
     {
         return [
             [
-                "url" => "https://app.postpuma.com/app/api/{workspaceId}",
+                "url" => "https://app.postpuma.com/app/api/{workspaceId}{basePath}",
                 "description" => "Production server",
                 "variables" => [
                     "workspaceId" => [
                         "description" => "Workspace ID",
                         "default_value" => "-1",
+                    ],
+                    "basePath" => [
+                        "description" => "Base path",
+                        "default_value" => "Your workspace base path",
                     ]
                 ]
             ]

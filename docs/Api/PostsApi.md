@@ -1,6 +1,6 @@
 # PostPuma\PostsApi
 
-All URIs are relative to https://app.postpuma.com/app/api, except if the operation defines another base path.
+All URIs are relative to https://app.postpuma.com/app/api/Your workspace base path, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
