@@ -31,7 +31,7 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "PostPuma\\" : "lib/" }
+        "psr-4": { "PostPuma\\" : "src/" }
     },
     "autoload-dev": {
         "psr-4": { "PostPuma\\Test\\" : "test/" }

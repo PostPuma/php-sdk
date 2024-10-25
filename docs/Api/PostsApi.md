@@ -17,7 +17,7 @@ All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313i
 ## `createPost()`
 
 ```php
-createPost($create_post_request): \PostPuma\Model\Post
+createPost($create_post_request): \PostPuma\Client\Model\Post
 ```
 
 Create post
@@ -41,7 +41,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_post_request = new \PostPuma\Model\CreatePostRequest(); // \PostPuma\Model\CreatePostRequest
+$create_post_request = new \PostPuma\Client\Model\CreatePostRequest(); // \PostPuma\Client\Model\CreatePostRequest
 
 try {
     $result = $apiInstance->createPost($create_post_request);
@@ -55,11 +55,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_post_request** | [**\PostPuma\Model\CreatePostRequest**](../Model/CreatePostRequest.md)|  | [optional] |
+| **create_post_request** | [**\PostPuma\Client\Model\CreatePostRequest**](../Model/CreatePostRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\PostPuma\Model\Post**](../Model/Post.md)
+[**\PostPuma\Client\Model\Post**](../Model/Post.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ try {
 ## `deletePost()`
 
 ```php
-deletePost($post_uuid, $delete_post_request): \PostPuma\Model\DeletePosts200Response
+deletePost($post_uuid, $delete_post_request): \PostPuma\Client\Model\DeletePosts200Response
 ```
 
 Delete post
@@ -102,7 +102,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
-$delete_post_request = new \PostPuma\Model\DeletePostRequest(); // \PostPuma\Model\DeletePostRequest
+$delete_post_request = new \PostPuma\Client\Model\DeletePostRequest(); // \PostPuma\Client\Model\DeletePostRequest
 
 try {
     $result = $apiInstance->deletePost($post_uuid, $delete_post_request);
@@ -117,11 +117,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
-| **delete_post_request** | [**\PostPuma\Model\DeletePostRequest**](../Model/DeletePostRequest.md)|  | [optional] |
+| **delete_post_request** | [**\PostPuma\Client\Model\DeletePostRequest**](../Model/DeletePostRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\PostPuma\Model\DeletePosts200Response**](../Model/DeletePosts200Response.md)
+[**\PostPuma\Client\Model\DeletePosts200Response**](../Model/DeletePosts200Response.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ try {
 ## `deletePosts()`
 
 ```php
-deletePosts($delete_posts_request): \PostPuma\Model\DeletePosts200Response
+deletePosts($delete_posts_request): \PostPuma\Client\Model\DeletePosts200Response
 ```
 
 Delete posts
@@ -163,7 +163,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$delete_posts_request = new \PostPuma\Model\DeletePostsRequest(); // \PostPuma\Model\DeletePostsRequest
+$delete_posts_request = new \PostPuma\Client\Model\DeletePostsRequest(); // \PostPuma\Client\Model\DeletePostsRequest
 
 try {
     $result = $apiInstance->deletePosts($delete_posts_request);
@@ -177,11 +177,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **delete_posts_request** | [**\PostPuma\Model\DeletePostsRequest**](../Model/DeletePostsRequest.md)|  | [optional] |
+| **delete_posts_request** | [**\PostPuma\Client\Model\DeletePostsRequest**](../Model/DeletePostsRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\PostPuma\Model\DeletePosts200Response**](../Model/DeletePosts200Response.md)
+[**\PostPuma\Client\Model\DeletePosts200Response**](../Model/DeletePosts200Response.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ try {
 ## `getPost()`
 
 ```php
-getPost($post_uuid): \PostPuma\Model\Post
+getPost($post_uuid): \PostPuma\Client\Model\Post
 ```
 
 Get post
@@ -241,7 +241,7 @@ try {
 
 ### Return type
 
-[**\PostPuma\Model\Post**](../Model/Post.md)
+[**\PostPuma\Client\Model\Post**](../Model/Post.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ try {
 ## `listPosts()`
 
 ```php
-listPosts($page): \PostPuma\Model\ListPosts200Response
+listPosts($page): \PostPuma\Client\Model\ListPosts200Response
 ```
 
 List posts
@@ -301,7 +301,7 @@ try {
 
 ### Return type
 
-[**\PostPuma\Model\ListPosts200Response**](../Model/ListPosts200Response.md)
+[**\PostPuma\Client\Model\ListPosts200Response**](../Model/ListPosts200Response.md)
 
 ### Authorization
 
@@ -319,7 +319,7 @@ try {
 ## `queuePost()`
 
 ```php
-queuePost($post_uuid): \PostPuma\Model\QueuePost200Response
+queuePost($post_uuid): \PostPuma\Client\Model\QueuePost200Response
 ```
 
 Queue post
@@ -361,7 +361,7 @@ try {
 
 ### Return type
 
-[**\PostPuma\Model\QueuePost200Response**](../Model/QueuePost200Response.md)
+[**\PostPuma\Client\Model\QueuePost200Response**](../Model/QueuePost200Response.md)
 
 ### Authorization
 
@@ -379,7 +379,7 @@ try {
 ## `schedulePost()`
 
 ```php
-schedulePost($post_uuid, $schedule_post_request): \PostPuma\Model\QueuePost200Response
+schedulePost($post_uuid, $schedule_post_request): \PostPuma\Client\Model\QueuePost200Response
 ```
 
 Schedule post
@@ -404,7 +404,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
-$schedule_post_request = new \PostPuma\Model\SchedulePostRequest(); // \PostPuma\Model\SchedulePostRequest
+$schedule_post_request = new \PostPuma\Client\Model\SchedulePostRequest(); // \PostPuma\Client\Model\SchedulePostRequest
 
 try {
     $result = $apiInstance->schedulePost($post_uuid, $schedule_post_request);
@@ -419,11 +419,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
-| **schedule_post_request** | [**\PostPuma\Model\SchedulePostRequest**](../Model/SchedulePostRequest.md)|  | [optional] |
+| **schedule_post_request** | [**\PostPuma\Client\Model\SchedulePostRequest**](../Model/SchedulePostRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\PostPuma\Model\QueuePost200Response**](../Model/QueuePost200Response.md)
+[**\PostPuma\Client\Model\QueuePost200Response**](../Model/QueuePost200Response.md)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ try {
 ## `updatePost()`
 
 ```php
-updatePost($post_uuid, $update_post_request): \PostPuma\Model\DeleteMediaFiles200Response
+updatePost($post_uuid, $update_post_request): \PostPuma\Client\Model\DeleteMediaFiles200Response
 ```
 
 Update post
@@ -466,7 +466,7 @@ $apiInstance = new PostPuma\Api\PostsApi(
     $config
 );
 $post_uuid = 'post_uuid_example'; // string | Post UUID
-$update_post_request = new \PostPuma\Model\UpdatePostRequest(); // \PostPuma\Model\UpdatePostRequest
+$update_post_request = new \PostPuma\Client\Model\UpdatePostRequest(); // \PostPuma\Client\Model\UpdatePostRequest
 
 try {
     $result = $apiInstance->updatePost($post_uuid, $update_post_request);
@@ -481,11 +481,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **post_uuid** | **string**| Post UUID | |
-| **update_post_request** | [**\PostPuma\Model\UpdatePostRequest**](../Model/UpdatePostRequest.md)|  | [optional] |
+| **update_post_request** | [**\PostPuma\Client\Model\UpdatePostRequest**](../Model/UpdatePostRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\PostPuma\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
+[**\PostPuma\Client\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
 
 ### Authorization
 

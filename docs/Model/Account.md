@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional]
 **username** | **string** |  | [optional]
 **provider** | **string** |  | [optional]
-**data** | [**\PostPuma\Model\AccountData**](AccountData.md) |  | [optional]
+**data** | [**\PostPuma\Client\Model\AccountData**](AccountData.md) |  | [optional]
 **authorized** | **bool** |  | [optional]
 **created_at** | **string** |  | [optional]
 

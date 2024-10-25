@@ -11,7 +11,7 @@ All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313i
 ## `getAccount()`
 
 ```php
-getAccount($account_uuid): \PostPuma\Model\Account
+getAccount($account_uuid): \PostPuma\Client\Model\Account
 ```
 
 Get account
@@ -53,7 +53,7 @@ try {
 
 ### Return type
 
-[**\PostPuma\Model\Account**](../Model/Account.md)
+[**\PostPuma\Client\Model\Account**](../Model/Account.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ try {
 ## `listAccounts()`
 
 ```php
-listAccounts(): \PostPuma\Model\ListAccounts200Response
+listAccounts(): \PostPuma\Client\Model\ListAccounts200Response
 ```
 
 List accounts
@@ -110,7 +110,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\PostPuma\Model\ListAccounts200Response**](../Model/ListAccounts200Response.md)
+[**\PostPuma\Client\Model\ListAccounts200Response**](../Model/ListAccounts200Response.md)
 
 ### Authorization
 

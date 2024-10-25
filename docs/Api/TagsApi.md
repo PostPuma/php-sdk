@@ -14,7 +14,7 @@ All URIs are relative to https://app.postpuma.com/app/5afgg2-1egj4n-7612ng-g313i
 ## `createTag()`
 
 ```php
-createTag($create_tag_request): \PostPuma\Model\Tag
+createTag($create_tag_request): \PostPuma\Client\Model\Tag
 ```
 
 Create tag
@@ -38,7 +38,7 @@ $apiInstance = new PostPuma\Api\TagsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_tag_request = new \PostPuma\Model\CreateTagRequest(); // \PostPuma\Model\CreateTagRequest
+$create_tag_request = new \PostPuma\Client\Model\CreateTagRequest(); // \PostPuma\Client\Model\CreateTagRequest
 
 try {
     $result = $apiInstance->createTag($create_tag_request);
@@ -52,11 +52,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_tag_request** | [**\PostPuma\Model\CreateTagRequest**](../Model/CreateTagRequest.md)|  | [optional] |
+| **create_tag_request** | [**\PostPuma\Client\Model\CreateTagRequest**](../Model/CreateTagRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\PostPuma\Model\Tag**](../Model/Tag.md)
+[**\PostPuma\Client\Model\Tag**](../Model/Tag.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ try {
 ## `deleteTag()`
 
 ```php
-deleteTag($tag_uuid): \PostPuma\Model\DeleteMediaFiles200Response
+deleteTag($tag_uuid): \PostPuma\Client\Model\DeleteMediaFiles200Response
 ```
 
 Delete tag
@@ -116,7 +116,7 @@ try {
 
 ### Return type
 
-[**\PostPuma\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
+[**\PostPuma\Client\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ try {
 ## `getTag()`
 
 ```php
-getTag($tag_uuid): \PostPuma\Model\Tag
+getTag($tag_uuid): \PostPuma\Client\Model\Tag
 ```
 
 Get tag
@@ -176,7 +176,7 @@ try {
 
 ### Return type
 
-[**\PostPuma\Model\Tag**](../Model/Tag.md)
+[**\PostPuma\Client\Model\Tag**](../Model/Tag.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ try {
 ## `listTags()`
 
 ```php
-listTags(): \PostPuma\Model\ListTags200Response
+listTags(): \PostPuma\Client\Model\ListTags200Response
 ```
 
 List tags
@@ -233,7 +233,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\PostPuma\Model\ListTags200Response**](../Model/ListTags200Response.md)
+[**\PostPuma\Client\Model\ListTags200Response**](../Model/ListTags200Response.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ This endpoint does not need any parameter.
 ## `updateTag()`
 
 ```php
-updateTag($tag_uuid, $update_tag_request): \PostPuma\Model\DeleteMediaFiles200Response
+updateTag($tag_uuid, $update_tag_request): \PostPuma\Client\Model\DeleteMediaFiles200Response
 ```
 
 Update tag
@@ -276,7 +276,7 @@ $apiInstance = new PostPuma\Api\TagsApi(
     $config
 );
 $tag_uuid = 'tag_uuid_example'; // string | Tag UUID
-$update_tag_request = new \PostPuma\Model\UpdateTagRequest(); // \PostPuma\Model\UpdateTagRequest
+$update_tag_request = new \PostPuma\Client\Model\UpdateTagRequest(); // \PostPuma\Client\Model\UpdateTagRequest
 
 try {
     $result = $apiInstance->updateTag($tag_uuid, $update_tag_request);
@@ -291,11 +291,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **tag_uuid** | **string**| Tag UUID | |
-| **update_tag_request** | [**\PostPuma\Model\UpdateTagRequest**](../Model/UpdateTagRequest.md)|  | [optional] |
+| **update_tag_request** | [**\PostPuma\Client\Model\UpdateTagRequest**](../Model/UpdateTagRequest.md)|  | [optional] |
 
 ### Return type
 
-[**\PostPuma\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
+[**\PostPuma\Client\Model\DeleteMediaFiles200Response**](../Model/DeleteMediaFiles200Response.md)
 
 ### Authorization
 
