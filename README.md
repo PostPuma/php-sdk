@@ -19,11 +19,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/PostPuma/php-sdk.git"
+      "url": "https://github.com/postpuma/php-sdk.git"
     }
   ],
   "require": {
-    "PostPuma/php-sdk": "*@dev"
+    "postpuma/php-sdk": "*@dev"
   }
 }
 ```

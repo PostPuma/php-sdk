@@ -1,5 +1,5 @@
 {
-    "name": "postpuma/postpuma-sdk",
+    "name": "postpuma/php-sdk",
     "description": "PostPuma API specifications",
     "keywords": [
         "openapitools",
