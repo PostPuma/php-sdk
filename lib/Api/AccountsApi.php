@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace PostPuma\PostPumaApi;
+namespace PostPuma\PostPuma\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
