@@ -365,7 +365,7 @@ class TagsApi
 
 
 
-        $resourcePath = '/tags';
+        $resourcePath = '/{workspaceId}/tags';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -676,7 +676,7 @@ class TagsApi
         }
 
 
-        $resourcePath = '/tags/{tagUuid}';
+        $resourcePath = '/{workspaceId}/tags/{tagUuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -988,7 +988,7 @@ class TagsApi
         }
 
 
-        $resourcePath = '/tags/{tagUuid}';
+        $resourcePath = '/{workspaceId}/tags/{tagUuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1288,7 +1288,7 @@ class TagsApi
     {
 
 
-        $resourcePath = '/tags';
+        $resourcePath = '/{workspaceId}/tags';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1598,7 +1598,7 @@ class TagsApi
 
 
 
-        $resourcePath = '/tags/{tagUuid}';
+        $resourcePath = '/{workspaceId}/tags/{tagUuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

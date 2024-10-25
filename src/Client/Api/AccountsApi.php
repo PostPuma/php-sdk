@@ -362,7 +362,7 @@ class AccountsApi
         }
 
 
-        $resourcePath = '/accounts/{accountUuid}';
+        $resourcePath = '/{workspaceId}/accounts/{accountUuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

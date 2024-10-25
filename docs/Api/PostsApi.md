@@ -4,14 +4,14 @@ All URIs are relative to https://app.postpuma.com/app/api, except if the operati
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**createPost()**](PostsApi.md#createPost) | **POST** /posts | Create post |
-| [**deletePost()**](PostsApi.md#deletePost) | **DELETE** /posts/{postUuid} | Delete post |
-| [**deletePosts()**](PostsApi.md#deletePosts) | **DELETE** /posts | Delete posts |
-| [**getPost()**](PostsApi.md#getPost) | **GET** /posts/{postUuid} | Get post |
-| [**listPosts()**](PostsApi.md#listPosts) | **GET** /posts | List posts |
-| [**queuePost()**](PostsApi.md#queuePost) | **POST** /posts/add-to-queue/{postUuid} | Queue post |
-| [**schedulePost()**](PostsApi.md#schedulePost) | **POST** /posts/schedule/{postUuid} | Schedule post |
-| [**updatePost()**](PostsApi.md#updatePost) | **PUT** /posts/{postUuid} | Update post |
+| [**createPost()**](PostsApi.md#createPost) | **POST** /{workspaceId}/posts | Create post |
+| [**deletePost()**](PostsApi.md#deletePost) | **DELETE** /{workspaceId}/posts/{postUuid} | Delete post |
+| [**deletePosts()**](PostsApi.md#deletePosts) | **DELETE** /{workspaceId}/posts | Delete posts |
+| [**getPost()**](PostsApi.md#getPost) | **GET** /{workspaceId}/posts/{postUuid} | Get post |
+| [**listPosts()**](PostsApi.md#listPosts) | **GET** /{workspaceId}/posts | List posts |
+| [**queuePost()**](PostsApi.md#queuePost) | **POST** /{workspaceId}/posts/add-to-queue/{postUuid} | Queue post |
+| [**schedulePost()**](PostsApi.md#schedulePost) | **POST** /{workspaceId}/posts/schedule/{postUuid} | Schedule post |
+| [**updatePost()**](PostsApi.md#updatePost) | **PUT** /{workspaceId}/posts/{postUuid} | Update post |
 
 
 ## `createPost()`

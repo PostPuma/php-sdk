@@ -76,25 +76,25 @@ All URIs are relative to *https://app.postpuma.com/app/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountsApi* | [**getAccount**](docs/Api/AccountsApi.md#getaccount) | **GET** /accounts/{accountUuid} | Get account
+*AccountsApi* | [**getAccount**](docs/Api/AccountsApi.md#getaccount) | **GET** /{workspaceId}/accounts/{accountUuid} | Get account
 *AccountsApi* | [**listAccounts**](docs/Api/AccountsApi.md#listaccounts) | **GET** /{workspaceId}/accounts | List accounts
-*MediaApi* | [**deleteMediaFiles**](docs/Api/MediaApi.md#deletemediafiles) | **DELETE** /media | Delete media files
-*MediaApi* | [**getMediaFile**](docs/Api/MediaApi.md#getmediafile) | **GET** /media/{mediaUuid} | Get media file
-*MediaApi* | [**listMediaFiles**](docs/Api/MediaApi.md#listmediafiles) | **GET** /media | List media files
-*MediaApi* | [**uploadMediaFile**](docs/Api/MediaApi.md#uploadmediafile) | **POST** /media | Upload media file
-*PostsApi* | [**createPost**](docs/Api/PostsApi.md#createpost) | **POST** /posts | Create post
-*PostsApi* | [**deletePost**](docs/Api/PostsApi.md#deletepost) | **DELETE** /posts/{postUuid} | Delete post
-*PostsApi* | [**deletePosts**](docs/Api/PostsApi.md#deleteposts) | **DELETE** /posts | Delete posts
-*PostsApi* | [**getPost**](docs/Api/PostsApi.md#getpost) | **GET** /posts/{postUuid} | Get post
-*PostsApi* | [**listPosts**](docs/Api/PostsApi.md#listposts) | **GET** /posts | List posts
-*PostsApi* | [**queuePost**](docs/Api/PostsApi.md#queuepost) | **POST** /posts/add-to-queue/{postUuid} | Queue post
-*PostsApi* | [**schedulePost**](docs/Api/PostsApi.md#schedulepost) | **POST** /posts/schedule/{postUuid} | Schedule post
-*PostsApi* | [**updatePost**](docs/Api/PostsApi.md#updatepost) | **PUT** /posts/{postUuid} | Update post
-*TagsApi* | [**createTag**](docs/Api/TagsApi.md#createtag) | **POST** /tags | Create tag
-*TagsApi* | [**deleteTag**](docs/Api/TagsApi.md#deletetag) | **DELETE** /tags/{tagUuid} | Delete tag
-*TagsApi* | [**getTag**](docs/Api/TagsApi.md#gettag) | **GET** /tags/{tagUuid} | Get tag
-*TagsApi* | [**listTags**](docs/Api/TagsApi.md#listtags) | **GET** /tags | List tags
-*TagsApi* | [**updateTag**](docs/Api/TagsApi.md#updatetag) | **PUT** /tags/{tagUuid} | Update tag
+*MediaApi* | [**deleteMediaFiles**](docs/Api/MediaApi.md#deletemediafiles) | **DELETE** /{workspaceId}/media | Delete media files
+*MediaApi* | [**getMediaFile**](docs/Api/MediaApi.md#getmediafile) | **GET** /{workspaceId}/media/{mediaUuid} | Get media file
+*MediaApi* | [**listMediaFiles**](docs/Api/MediaApi.md#listmediafiles) | **GET** /{workspaceId}/media | List media files
+*MediaApi* | [**uploadMediaFile**](docs/Api/MediaApi.md#uploadmediafile) | **POST** /{workspaceId}/media | Upload media file
+*PostsApi* | [**createPost**](docs/Api/PostsApi.md#createpost) | **POST** /{workspaceId}/posts | Create post
+*PostsApi* | [**deletePost**](docs/Api/PostsApi.md#deletepost) | **DELETE** /{workspaceId}/posts/{postUuid} | Delete post
+*PostsApi* | [**deletePosts**](docs/Api/PostsApi.md#deleteposts) | **DELETE** /{workspaceId}/posts | Delete posts
+*PostsApi* | [**getPost**](docs/Api/PostsApi.md#getpost) | **GET** /{workspaceId}/posts/{postUuid} | Get post
+*PostsApi* | [**listPosts**](docs/Api/PostsApi.md#listposts) | **GET** /{workspaceId}/posts | List posts
+*PostsApi* | [**queuePost**](docs/Api/PostsApi.md#queuepost) | **POST** /{workspaceId}/posts/add-to-queue/{postUuid} | Queue post
+*PostsApi* | [**schedulePost**](docs/Api/PostsApi.md#schedulepost) | **POST** /{workspaceId}/posts/schedule/{postUuid} | Schedule post
+*PostsApi* | [**updatePost**](docs/Api/PostsApi.md#updatepost) | **PUT** /{workspaceId}/posts/{postUuid} | Update post
+*TagsApi* | [**createTag**](docs/Api/TagsApi.md#createtag) | **POST** /{workspaceId}/tags | Create tag
+*TagsApi* | [**deleteTag**](docs/Api/TagsApi.md#deletetag) | **DELETE** /{workspaceId}/tags/{tagUuid} | Delete tag
+*TagsApi* | [**getTag**](docs/Api/TagsApi.md#gettag) | **GET** /{workspaceId}/tags/{tagUuid} | Get tag
+*TagsApi* | [**listTags**](docs/Api/TagsApi.md#listtags) | **GET** /{workspaceId}/tags | List tags
+*TagsApi* | [**updateTag**](docs/Api/TagsApi.md#updatetag) | **PUT** /{workspaceId}/tags/{tagUuid} | Update tag
 
 ## Models
 

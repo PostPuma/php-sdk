@@ -4,11 +4,11 @@ All URIs are relative to https://app.postpuma.com/app/api, except if the operati
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**createTag()**](TagsApi.md#createTag) | **POST** /tags | Create tag |
-| [**deleteTag()**](TagsApi.md#deleteTag) | **DELETE** /tags/{tagUuid} | Delete tag |
-| [**getTag()**](TagsApi.md#getTag) | **GET** /tags/{tagUuid} | Get tag |
-| [**listTags()**](TagsApi.md#listTags) | **GET** /tags | List tags |
-| [**updateTag()**](TagsApi.md#updateTag) | **PUT** /tags/{tagUuid} | Update tag |
+| [**createTag()**](TagsApi.md#createTag) | **POST** /{workspaceId}/tags | Create tag |
+| [**deleteTag()**](TagsApi.md#deleteTag) | **DELETE** /{workspaceId}/tags/{tagUuid} | Delete tag |
+| [**getTag()**](TagsApi.md#getTag) | **GET** /{workspaceId}/tags/{tagUuid} | Get tag |
+| [**listTags()**](TagsApi.md#listTags) | **GET** /{workspaceId}/tags | List tags |
+| [**updateTag()**](TagsApi.md#updateTag) | **PUT** /{workspaceId}/tags/{tagUuid} | Update tag |
 
 
 ## `createTag()`

@@ -4,10 +4,10 @@ All URIs are relative to https://app.postpuma.com/app/api, except if the operati
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**deleteMediaFiles()**](MediaApi.md#deleteMediaFiles) | **DELETE** /media | Delete media files |
-| [**getMediaFile()**](MediaApi.md#getMediaFile) | **GET** /media/{mediaUuid} | Get media file |
-| [**listMediaFiles()**](MediaApi.md#listMediaFiles) | **GET** /media | List media files |
-| [**uploadMediaFile()**](MediaApi.md#uploadMediaFile) | **POST** /media | Upload media file |
+| [**deleteMediaFiles()**](MediaApi.md#deleteMediaFiles) | **DELETE** /{workspaceId}/media | Delete media files |
+| [**getMediaFile()**](MediaApi.md#getMediaFile) | **GET** /{workspaceId}/media/{mediaUuid} | Get media file |
+| [**listMediaFiles()**](MediaApi.md#listMediaFiles) | **GET** /{workspaceId}/media | List media files |
+| [**uploadMediaFile()**](MediaApi.md#uploadMediaFile) | **POST** /{workspaceId}/media | Upload media file |
 
 
 ## `deleteMediaFiles()`

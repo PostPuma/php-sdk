@@ -4,7 +4,7 @@ All URIs are relative to https://app.postpuma.com/app/api, except if the operati
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getAccount()**](AccountsApi.md#getAccount) | **GET** /accounts/{accountUuid} | Get account |
+| [**getAccount()**](AccountsApi.md#getAccount) | **GET** /{workspaceId}/accounts/{accountUuid} | Get account |
 | [**listAccounts()**](AccountsApi.md#listAccounts) | **GET** /{workspaceId}/accounts | List accounts |
 
 

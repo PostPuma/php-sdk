@@ -374,7 +374,7 @@ class PostsApi
 
 
 
-        $resourcePath = '/posts';
+        $resourcePath = '/{workspaceId}/posts';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -691,7 +691,7 @@ class PostsApi
 
 
 
-        $resourcePath = '/posts/{postUuid}';
+        $resourcePath = '/{workspaceId}/posts/{postUuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1004,7 +1004,7 @@ class PostsApi
 
 
 
-        $resourcePath = '/posts';
+        $resourcePath = '/{workspaceId}/posts';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1315,7 +1315,7 @@ class PostsApi
         }
 
 
-        $resourcePath = '/posts/{postUuid}';
+        $resourcePath = '/{workspaceId}/posts/{postUuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1621,7 +1621,7 @@ class PostsApi
 
 
 
-        $resourcePath = '/posts';
+        $resourcePath = '/{workspaceId}/posts';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1934,7 +1934,7 @@ class PostsApi
         }
 
 
-        $resourcePath = '/posts/add-to-queue/{postUuid}';
+        $resourcePath = '/{workspaceId}/posts/add-to-queue/{postUuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2252,7 +2252,7 @@ class PostsApi
 
 
 
-        $resourcePath = '/posts/schedule/{postUuid}';
+        $resourcePath = '/{workspaceId}/posts/schedule/{postUuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2577,7 +2577,7 @@ class PostsApi
 
 
 
-        $resourcePath = '/posts/{postUuid}';
+        $resourcePath = '/{workspaceId}/posts/{postUuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

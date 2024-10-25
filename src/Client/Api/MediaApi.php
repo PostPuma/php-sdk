@@ -362,7 +362,7 @@ class MediaApi
 
 
 
-        $resourcePath = '/media';
+        $resourcePath = '/{workspaceId}/media';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -673,7 +673,7 @@ class MediaApi
         }
 
 
-        $resourcePath = '/media/{mediaUuid}';
+        $resourcePath = '/{workspaceId}/media/{mediaUuid}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -979,7 +979,7 @@ class MediaApi
 
 
 
-        $resourcePath = '/media';
+        $resourcePath = '/{workspaceId}/media';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1286,7 +1286,7 @@ class MediaApi
 
 
 
-        $resourcePath = '/media';
+        $resourcePath = '/{workspaceId}/media';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
